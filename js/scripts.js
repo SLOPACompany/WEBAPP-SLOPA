@@ -12,7 +12,7 @@ function inici_sessio() {
                 window.alert("Aquest codi de classe no es valid");
             } else { 
                 window.alert("S'ha iniciat correctament la sessió !");
-                //inicia_sessio(); 
+                inicia_sessio(); 
             }
         });
 } 
