@@ -55,7 +55,7 @@ body {
 /* CSS SECCIONS  */
 #seccio_0 {
     display: flex;
-    background-image: url('resources/fondologin.jpg');
+    background-image: url('resources/fondologin2.jpg');
     background-position: center;
     background-origin: content-box;
     background-repeat: no-repeat;
@@ -90,7 +90,7 @@ body {
     justify-content: center;
     flex-direction: column;
     gap: 12px;
-    background: rgba(0, 0, 0, 0.589);
+    background: rgba(0, 0, 0, 0.568);
     border-radius: 20px;
 }
 .card>* {
@@ -102,7 +102,7 @@ body {
     color: #ffffff;
 }
 .card__content {
-    font-size: 12px;
+    font-size: 13px;
     font-weight:400;
     line-height: 18px;
     color: #8f8c8c;
@@ -126,12 +126,12 @@ body {
     font-weight:500;
     font-size: 15px;
     border: 0;
-    background: #000000;
+    background: #249145;
     color: #fff;
     padding: 0.68em;
     border-radius: 14px;
     font-weight: bold;
 }
 .sign-up:hover {
-    background-color: #222222;
+    background-color: #24914598;
 }
