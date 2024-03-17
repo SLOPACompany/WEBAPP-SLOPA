@@ -15,7 +15,7 @@ function inici_sessio() {
                 inicia_sessio(); 
             }
         });
-}
+} 
 
 function inicia_sessio() {
     validat = true; // usuari validat
