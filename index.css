@@ -55,7 +55,7 @@ body {
 /* CSS SECCIONS  */
 #seccio_0 {
     display: flex;
-    background-image: url('resources/FONDOLOGIN.jpg');
+    background-image: url('resources/fondologin.jpg');
     background-position: center;
     background-origin: content-box;
     background-repeat: no-repeat;
