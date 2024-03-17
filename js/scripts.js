@@ -1,29 +1,37 @@
+//SCRIPT LODAER (despareixer al carregar pagina)
+window.onload=function(){
+    $('#loading').fadeOut();
+}
+
+
 let validat = false; 
 let codiclasse;
 let scriptURL = "https://script.google.com/macros/s/AKfycbxeC47xF70GvKHp4sfxZ5nBuX93ln05D6kyP4z_qt5vVEEvDJCZyFRc62oBra3eL-lx/exec"; 
 
+//LOGIN SCRIPT
 function inici_sessio() {
+    document.getElementById("loading").style.display = "flex"; 
     codiclasse = document.getElementById("introcodi").value; 
     let consulta = scriptURL + "?query=select&where=codiclasse&is=" + codiclasse;
     fetch(consulta)
         .then((resposta) => resposta.json())
         .then((resposta) => {
-            if (resposta.length == 0) { 
+            if (resposta.length == 0) {
+                document.getElementById("loading").style.display = "none"; 
                 window.alert("Aquest codi de classe no es valid");
             } else { 
+                document.getElementById("loading").style.display = "none";
                 window.alert("S'ha iniciat correctament la sessió !");
                 inicia_sessio(); 
             }
         });
 } 
-
 function inicia_sessio() {
     validat = true; // usuari validat
     document.getElementById("seccio_0").style.display = "none"; 
     document.getElementById("menu").style.display = "flex"; 
     canvia_seccio(1); // es mostra la secció 1
 }
-
 function tanca_sessio() {
     if (validat) {
         validat = false; // usuari desvalidat
@@ -32,7 +40,7 @@ function tanca_sessio() {
 }
 
 
-
+//MENU SCRIP
 function canvia_seccio(num_boto) {
     const menu = document.getElementById("menu");
     const num_botons = menu.children.length; // el nombre de botons dins de l'element "menu"
