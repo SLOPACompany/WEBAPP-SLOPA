@@ -1,0 +1,137 @@
+/* Importació de la font Poppins des de Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+html { 
+    height: -webkit-fill-available;    /* per a dispositius mòbils */
+}
+
+
+/* body */
+body {
+    display: flex;    /* tipus de display que ofereix més prestacions que block */
+    flex-direction: column;    /* els elements es disposen de dalt cap abaix */
+    justify-content: space-between;    /* els elements, separats per espais, ocupen tot l'espai disponibles */
+    min-height: 100vh;    /* alçària de la pantalla en navegadors d'escriptori */  
+    min-height: 100svh;    /* per a navegadors on la declaració anterior no és precisa */
+    min-height: -webkit-fill-available;    
+    margin: 0px;    /* elimina tots els marges del document */
+    font-family: "Poppins", sans-serif;    /* un tipus de lletra adient per a llocs web */
+    background-color: #ffffff;    /* color de fons en format #RRGGBB */
+}
+
+
+/* CSS MENU */
+#menu {
+    display: none;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #1088f8; /* Color de fondo del menú */
+    color: white; /* Color del texto */
+    position: fixed;
+    bottom: 0;
+    width: 100%; /* Llarg del menú */
+    padding: 20px; /* Espai intern menú */
+    box-sizing: border-box;
+}
+#menu i {
+    font-size: 40px; /* Tamany de iconos */
+    cursor: pointer;/* Cliceable */
+}
+
+#exit{
+    color: #f83030; 
+}
+
+
+/* CSS per a TOTES les seccions */
+.seccio {
+    flex: 1;
+    display: flex;
+    justify-content: center; /* Centra horizontalmente los elementos dentro de .seccio */
+    align-items: center; /* Centra verticalmente los elementos dentro de .seccio */
+    height: 100vh; /* Hace que .seccio ocupe toda la altura de la pantalla */
+}
+
+/* CSS SECCIONS  */
+#seccio_0 {
+    display: flex;
+    background-image: url('resources/FONDOLOGIN.jpg');
+    background-position: center;
+    background-origin: content-box;
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+
+#seccio_1{
+    display: none;
+}
+
+#seccio_2{
+    display: none;
+}
+
+#seccio_3{
+    display: none;
+}
+
+#seccio_4{
+    display: none;
+}
+
+
+.card {
+    width: 240px;
+    height: 254px;
+    padding: 0 15px;
+    font-weight:500;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 12px;
+    background: rgba(0, 0, 0, 0.589);
+    border-radius: 20px;
+}
+.card>* {
+    margin: 0;
+}
+.card__title {
+    font-weight:600;
+    font-size: 27px;
+    color: #ffffff;
+}
+.card__content {
+    font-size: 12px;
+    font-weight:400;
+    line-height: 18px;
+    color: #8f8c8c;
+}
+.card__form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.card__form input {
+    margin-top: 10px;
+    outline: 0;
+    background: rgb(255, 255, 255);
+    box-shadow: transparent 0px 0px 0px 1px inset;
+    padding: 0.6em;
+    border-radius: 14px;
+    border: 2px solid rgb(78, 78, 78);
+    color: rgb(0, 0, 0);
+}
+.card__form button {
+    font-weight:500;
+    font-size: 15px;
+    border: 0;
+    background: #000000;
+    color: #fff;
+    padding: 0.68em;
+    border-radius: 14px;
+    font-weight: bold;
+}
+.sign-up:hover {
+    background-color: #222222;
+}
