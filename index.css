@@ -62,6 +62,15 @@ body {
     background-size:cover;
 }
 
+#seccio_0_1 {
+    display: none;
+    background-image: url('resources/fondologin2.jpg');
+    background-position: center;
+    background-origin: content-box;
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+
 #seccio_1{
     display: none;
 }
@@ -78,7 +87,7 @@ body {
     display: none;
 }
 
-
+/* CSS LOGIN ALUMNAT  */
 .card {
     width: 240px;
     height: 254px;
@@ -136,6 +145,75 @@ body {
     background-color: #24914598;
 }
 
+
+/* CSS LOGIN PROFESSORAT  */
+.card2 {
+    width: 240px;
+    height: 300px;
+    padding: 0 15px;
+    font-weight:500;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 12px;
+    background: rgba(0, 0, 0, 0.568);
+    border-radius: 20px;
+}
+.card2>* {
+    margin: 0;
+}
+.card2__title {
+    font-weight:600;
+    font-size: 27px;
+    color: #ffffff;
+}
+.card2__content {
+    font-size: 13px;
+    font-weight:400;
+    line-height: 18px;
+    color: #8f8c8c;
+}
+.card2__form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.card2__form input {
+    outline: 0;
+    background: rgb(252, 252, 252);
+    box-shadow: transparent 0px 0px 0px 1px inset;
+    padding: 0.6em;
+    border-radius: 14px;
+    border: 2px solid rgb(78, 78, 78);
+    color: rgb(0, 0, 0);
+}
+.card2__form button {
+    font-weight:500;
+    font-size: 15px;
+    border: 0;
+    background: #249145;
+    color: #fff;
+    padding: 0.68em;
+    border-radius: 14px;
+    font-weight: bold;
+}
+.sign-up:hover {
+    background-color: #24914598;
+}
+
+#textprofe{
+    font-size: 13px;
+    font-weight:500;
+    line-height: 1px;
+    color: #007db8;
+    text-decoration:underline;
+    cursor: pointer;
+}
+
+
+
 #loading{
     display: flex;
     position: fixed; /* Para que el loader permanezca en la misma posición independientemente del desplazamiento de la página */
@@ -145,9 +223,7 @@ body {
     height: 100%;
     background-color: rgba(255, 255, 255, 0.568); /* Fondo semi-transparente para el loader */
     z-index: 9999;
-    
 }
-
 /* PLANTILLA LOADER */
 @keyframes ldio-nxt5zzdxa1-1 {
     0% { top: 36px; height: 128px }

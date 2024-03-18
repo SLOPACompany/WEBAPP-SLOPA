@@ -3,10 +3,11 @@ window.onload=function(){
     $('#loading').fadeOut();
 }
 
-
+//VARIABLESS
 let validat = false; 
 let codiclasse;
 let scriptURL = "https://script.google.com/macros/s/AKfycbxeC47xF70GvKHp4sfxZ5nBuX93ln05D6kyP4z_qt5vVEEvDJCZyFRc62oBra3eL-lx/exec"; 
+let CLASSE
 
 //LOGIN SCRIPT
 function inici_sessio() {
@@ -18,7 +19,7 @@ function inici_sessio() {
         .then((resposta) => {
             if (resposta.length == 0) {
                 document.getElementById("loading").style.display = "none"; 
-                window.alert("Aquest codi de classe no es valid");
+                window.alert("Codi de classe no vàlid");
             } else { 
                 document.getElementById("loading").style.display = "none";
                 window.alert("S'ha iniciat correctament la sessió !");
@@ -26,12 +27,14 @@ function inici_sessio() {
             }
         });
 } 
+
 function inicia_sessio() {
     validat = true; // usuari validat
     document.getElementById("seccio_0").style.display = "none"; 
     document.getElementById("menu").style.display = "flex"; 
     canvia_seccio(1); // es mostra la secció 1
 }
+
 function tanca_sessio() {
     if (validat) {
         validat = false; // usuari desvalidat
@@ -59,3 +62,43 @@ function canvia_seccio(num_boto) {
     }
 }
 
+
+
+
+//FUNCIOS PER A PROFESORAT
+
+//CANVI LOGIN
+function canviloginprof(){
+    document.getElementById("loading").style.display = "flex";
+    document.getElementById("seccio_0").style.display = "none";
+    document.getElementById("seccio_0_1").style.display = "flex";
+    document.getElementById("loading").style.display = "none";
+} 
+
+//BOTO INICAR SESSIO
+function inicia_sessio_professorat() {
+    validat = true; // usuari validat
+    document.getElementById("seccio_0").style.display = "none";
+    document.getElementById("menu").style.display = "none";
+    document.getElementById("").style.display = "flex"; 
+    
+}
+
+//LOGIN CLASSE I CONTRASENYA PROFESORAT
+function inicia_sessio_professorat(){
+    document.getElementById("loading").style.display = "flex"; 
+    codiclasse = document.getElementById("introcodi").value; 
+    let consulta = scriptURL + "?query=select&where=codiclasse&is=" + codiclasse;
+    fetch(consulta)
+        .then((resposta) => resposta.json())
+        .then((resposta) => {
+            if (resposta.length == 0) {
+                document.getElementById("loading").style.display = "none"; 
+                window.alert("Codi de classe o Contrasenya de professor no vàlid");
+            } else { 
+                document.getElementById("loading").style.display = "none";
+                window.alert("S'ha iniciat correctament la sessió !");
+                inicia_sessio(); 
+            }
+        });
+} 
