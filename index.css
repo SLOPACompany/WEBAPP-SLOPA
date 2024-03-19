@@ -94,7 +94,7 @@ body {
 /* CSS LOGIN ALUMNAT  */
 .card {
     width: 240px;
-    height: 254px;
+    height: 500px;
     padding: 0 15px;
     font-weight:500;
     text-align: center;
@@ -136,8 +136,9 @@ body {
     color: rgb(0, 0, 0);
 }
 .card__form button {
-    font-weight:500;
-    font-size: 15px;
+    margin-top: 7px;
+    font-weight:50s0;
+    font-size: 17px;
     border: 0;
     background: #249145;
     color: #fff;
@@ -148,12 +149,17 @@ body {
 .sign-up:hover {
     background-color: #24914598;
 }
+#fotologin{
+    width: 300px;
+    height: 200px;
+    
+}
 
 
 /* CSS LOGIN PROFESSORAT  */
 .card2 {
     width: 240px;
-    height: 300px;
+    height: 500px;
     padding: 0 15px;
     font-weight:500;
     text-align: center;
@@ -182,7 +188,7 @@ body {
 .card2__form {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 10px;
 }
 .card2__form input {
     outline: 0;
@@ -194,8 +200,9 @@ body {
     color: rgb(0, 0, 0);
 }
 .card2__form button {
+    margin-top: 12px;
     font-weight:500;
-    font-size: 15px;
+    font-size: 17px;
     border: 0;
     background: #249145;
     color: #fff;
