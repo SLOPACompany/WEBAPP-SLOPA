@@ -13,15 +13,14 @@
 <!-- fonts icon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/solid.min.css"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/fontawesome.min.css"> 
-    <link rel="icon" type="image/png" href="resources/logo.png" >
+    <link rel="icon" type="image/png" href="resources/LOGO.png" >
 <!-- TITLE -->
     <title>SLOPA Recycling</title>
 </head> 
 
 
 <body>
-
-
+<!-- MENU -->
     <div id="menu">      
         <i id="boto_2" class="fa-solid fa-clipboard-list" onclick="canvia_seccio(2)"></i>
         <i id="boto_3" class="fa-solid fa-chart-line" onclick="canvia_seccio(3)"></i>
@@ -29,36 +28,63 @@
         <i id="boto_4" class="fa-solid fa-id-card" onclick="canvia_seccio(4)"></i>
         <i id="exit" class="fa-solid fa-right-from-bracket" onclick="tanca_sessio()"></i>
         </div>
-    
+
+<!-- LOGIN ALUMNAT (Predeterminat) --> 
         <div id="seccio_0" class="seccio">
             <div class="card">
+                <img src="resources/LOGO.png" id="fotologin">
                 <span class="card__title">INICI SESSIÓ</span>
                 <p class="card__content">*Per entrar introdueix el codi de classe corresponent.
                 </p>
                 <div class="card__form">
                  <input placeholder="Codi de Classe" type="number" id="introcodi" onkeypress="inici_sessio()">
                 <button class="sign-up" onclick="inici_sessio()">Iniciar Sessió</button>
+                <p id="textprofe" onclick="canviloginprof()">Ets Professor?</p>
+        </div>
+        </div>
+        </div>
+
+<!-- LOGIN PROFESORAT -->
+        <div id="seccio_0_1" class="seccio">
+            <div class="card2">
+                <img src="resources/LOGO.png" id="fotologin">
+                <span class="card2__title">INICI SESSIÓ</span>
+                <p class="card2__content">*Per entrar introdueix el codi de classe i La contrasenya de Professor.
+                </p>
+                <div class="card2__form">
+                 <input placeholder="Codi de Classe" type="number" id="introcodiprof">
+                 <input placeholder="Contrasenya de Professor" type="password" id="introcontraprof">
+                <button class="sign-up" onclick="inicia_sessio_professorat()">Iniciar Sessió</button>
         </div>
         </div>
         </div>
     
-
+<!-- SECCIO 1 -->
          <div id="seccio_1" class="seccio">
 
          </div>
 
+<!-- SECCIO 2 -->
          <div id="seccio_2" class="seccio">
             
          </div>
 
+<!-- SECCIO 3 -->
          <div id="seccio_3" class="seccio">
             
          </div>
 
+<!-- SECCIO 4 -->
          <div id="seccio_4" class="seccio">
             
          </div>
 
+<!-- SECCIO PROFES -->
+<div id="seccio_PROFES" class="seccio">
+            
+</div>
+
+<!-- LOADER -->
         <div id="loading" class="seccio">
          <div class="loadingio-spinner-pulse-t1q80hntfj"><div class="ldio-nxt5zzdxa1">
             <div></div><div></div><div></div>
