@@ -63,6 +63,7 @@ function canvia_seccio(num_boto) {
 }
 
 
+//ONEKEYPRESS ENTER LOGIN
 
 
 //FUNCIOS PER A PROFESORAT
