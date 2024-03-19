@@ -76,29 +76,32 @@ function canviloginprof(){
 } 
 
 //BOTO INICAR SESSIO
-function inicia_sessio_professorat() {
+function inicia_ses_professorat() {
     validat = true; // usuari validat
     document.getElementById("seccio_0").style.display = "none";
+    document.getElementById("seccio_0_1").style.display = "none";
     document.getElementById("menu").style.display = "none";
-    document.getElementById("").style.display = "flex"; 
+    document.getElementById("seccio_PROFES").style.display = "flex"; 
     
 }
 
 //LOGIN CLASSE I CONTRASENYA PROFESORAT
 function inicia_sessio_professorat(){
-    document.getElementById("loading").style.display = "flex"; 
-    codiclasse = document.getElementById("introcodi").value; 
-    let consulta = scriptURL + "?query=select&where=codiclasse&is=" + codiclasse;
+    document.getElementById("loading").style.display = "flex";
+    codiclasse = document.getElementById("introcodiprof").value; 
+    contrasenya = document.getElementById("introcontraprof").value;
+    let consulta = scriptURL + "?query=select&where=codiclasse&is=" + codiclasse + "&and=contrasenya_profes&equal=" + contrasenya;
     fetch(consulta)
         .then((resposta) => resposta.json())
         .then((resposta) => {
-            if (resposta.length == 0) {
-                document.getElementById("loading").style.display = "none"; 
-                window.alert("Codi de classe o Contrasenya de professor no vàlid");
-            } else { 
+            if (resposta.length == 0) { // llista buida
                 document.getElementById("loading").style.display = "none";
-                window.alert("S'ha iniciat correctament la sessió !");
-                inicia_sessio(); 
+                window.alert("El nom d'usuari o la contrasenya no són correctes.");
+            } else { // llista amb (almenys) un registre
+                document.getElementById("loading").style.display = "none";
+                window.alert("S'ha iniciat correctament la sessió.");
+                inicia_ses_professorat()
             }
         });
 } 
+

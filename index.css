@@ -87,6 +87,10 @@ body {
     display: none;
 }
 
+#seccio_PROFES{
+    display: none;
+}
+
 /* CSS LOGIN ALUMNAT  */
 .card {
     width: 240px;
