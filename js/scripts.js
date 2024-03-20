@@ -3,7 +3,7 @@ window.onload=function(){
     $('#loading').fadeOut();
 }
 
-//VARIABLESS
+//VARIABLES
 let validat = false; 
 let codiclasse;
 let scriptURL = "https://script.google.com/macros/s/AKfycbxeC47xF70GvKHp4sfxZ5nBuX93ln05D6kyP4z_qt5vVEEvDJCZyFRc62oBra3eL-lx/exec"; 
@@ -13,11 +13,16 @@ let CLASSE
 function inici_sessio() {
     document.getElementById("loading").style.display = "flex"; 
     codiclasse = document.getElementById("introcodi").value; 
-    let consulta = scriptURL + "?query=select&where=codiclasse&is=" + codiclasse;
+    let consulta = scriptURL + "?query=select&where=codiclasse=" + codiclasse;
     fetch(consulta)
-        .then((resposta) => resposta.json())
-        .then((resposta) => {
-            if (resposta.length == 0) {
+        .then((resposta) => resposta.text()) // Llegir la resposta com a text
+        .then((respostaText) => {
+            // Guardar el text de la resposta en la variable CLASSE
+            CLASSE = respostaText;
+
+            // Analisis del JSON 
+            let respostaJSON = JSON.parse(respostaText);
+            if (respostaJSON.length == 0) {
                 document.getElementById("loading").style.display = "none"; 
                 window.alert("Codi de classe no vàlid");
             } else { 
@@ -43,6 +48,8 @@ function tanca_sessio() {
 }
 
 
+
+
 //MENU SCRIP
 function canvia_seccio(num_boto) {
     const menu = document.getElementById("menu");
@@ -64,7 +71,7 @@ function canvia_seccio(num_boto) {
 
 
 //ONEKEYPRESS ENTER LOGIN
-
+        //FALTA
 
 //FUNCIOS PER A PROFESORAT
 
@@ -98,7 +105,7 @@ function inicia_sessio_professorat(){
             if (resposta.length == 0) { // llista buida
                 document.getElementById("loading").style.display = "none";
                 window.alert("El nom d'usuari o la contrasenya no són correctes.");
-            } else { // llista amb (almenys) un registre
+            } else { // llista amb almenys un registre
                 document.getElementById("loading").style.display = "none";
                 window.alert("S'ha iniciat correctament la sessió.");
                 inicia_ses_professorat()

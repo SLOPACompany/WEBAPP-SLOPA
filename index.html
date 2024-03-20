@@ -27,10 +27,10 @@
         <i id="boto_1" class="fa-solid fa-house" onclick="canvia_seccio(1)"></i>
         <i id="boto_4" class="fa-solid fa-id-card" onclick="canvia_seccio(4)"></i>
         <i id="exit" class="fa-solid fa-right-from-bracket" onclick="tanca_sessio()"></i>
-        </div>
+    </div>
 
 <!-- LOGIN ALUMNAT (Predeterminat) --> 
-        <div id="seccio_0" class="seccio">
+    <div id="seccio_0" class="seccio">
             <div class="card">
                 <img src="resources/logo.png" id="fotologin">
                 <span class="card__title">INICI SESSIÓ</span>
@@ -40,12 +40,21 @@
                  <input placeholder="Codi de Classe" type="number" id="introcodi">
                 <button class="sign-up" onclick="inici_sessio()">Iniciar Sessió</button>
                 <p id="textprofe" onclick="canviloginprof()">Ets Professor?</p>
-        </div>
-        </div>
+            </div>
+    </div>
+        <script>
+            document.getElementById("introcodi").addEventListener("keydown", function(event) {
+// Verificar si la tecla presionada es Enter
+              if (event.key === "Enter") {
+// Executar la funcio
+                inici_sessio();
+              }
+            });
+            </script>
         </div>
 
 <!-- LOGIN PROFESORAT -->
-        <div id="seccio_0_1" class="seccio">
+    <div id="seccio_0_1" class="seccio">
             <div class="card2">
                 <img src="resources/logo.png" id="fotologin">
                 <span class="card2__title">INICI SESSIÓ</span>
@@ -53,11 +62,20 @@
                 </p>
                 <div class="card2__form">
                  <input placeholder="Codi de Classe" type="number" id="introcodiprof">
-                 <input placeholder="Contrasenya de Professor" type="password" id="introcontraprof">
+                 <input placeholder="Contrasenya Professor" type="password" id="introcontraprof">
                 <button class="sign-up" onclick="inicia_sessio_professorat()">Iniciar Sessió</button>
-        </div>
-        </div>
-        </div>
+            </div>
+             </div>
+        <script>
+            document.getElementById("introcontraprof").addEventListener("keydown", function(event) {
+// Verificar si la tecla presionada es Enter
+              if (event.key === "Enter") {
+// Executar la funcio
+                inici_sessio();
+              }
+            });
+            </script>
+    </div>
     
 <!-- SECCIO 1 -->
          <div id="seccio_1" class="seccio">
@@ -84,7 +102,7 @@
             
 </div>
 
-<!-- LOADER -->
+<!-- PLANTILLA LOADER -->
         <div id="loading" class="seccio">
          <div class="loadingio-spinner-pulse-t1q80hntfj"><div class="ldio-nxt5zzdxa1">
             <div></div><div></div><div></div>
