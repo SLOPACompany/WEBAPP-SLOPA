@@ -31,7 +31,7 @@
 
 <!-- LOGIN ALUMNAT (Predeterminat) --> 
     <div id="seccio_0" class="seccio">
-            <div class="card">
+        <div class="card">
                 <img src="resources/logo.png" id="fotologin">
                 <span class="card__title">INICI SESSIÓ</span>
                 <p class="card__content">*Per entrar introdueix el codi de classe corresponent.
@@ -40,9 +40,10 @@
                  <input placeholder="Codi de Classe" type="number" id="introcodi">
                 <button class="sign-up" onclick="inici_sessio()">Iniciar Sessió</button>
                 <p id="textprofe" onclick="canviloginprof()">Ets Professor?</p>
-            </div>
+        </div>
     </div>
-        <script>
+
+             <script>
             document.getElementById("introcodi").addEventListener("keydown", function(event) {
 // Verificar si la tecla presionada es Enter
               if (event.key === "Enter") {
@@ -53,6 +54,7 @@
             </script>
         </div>
 
+        
 <!-- LOGIN PROFESORAT -->
     <div id="seccio_0_1" class="seccio">
             <div class="card2">
@@ -70,12 +72,13 @@
             document.getElementById("introcontraprof").addEventListener("keydown", function(event) {
 // Verificar si la tecla presionada es Enter
               if (event.key === "Enter") {
-// Executar la funcio
+// Executar la funcio inici sessio
                 inici_sessio();
               }
             });
             </script>
     </div>
+
     
 <!-- SECCIO 1 -->
          <div id="seccio_1" class="seccio">
