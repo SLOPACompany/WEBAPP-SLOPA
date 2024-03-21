@@ -57,7 +57,7 @@ body {
 
 /*SECCIO LOGIN ALUMNAT (Predeterminat)  */
 #seccio_0 {
-    display: flex;
+    display: none;
     background-image: url('resources/fondologin2.jpg');
     background-position: center;
     background-origin: content-box;
@@ -290,3 +290,90 @@ body {
     transform-origin: 0 0; 
   }
   .ldio-nxt5zzdxa1 div { box-sizing: content-box; }
+
+/* SECCIO PROFES */
+#seccio_PROFES{
+    display: flex;
+    flex-direction: column;
+}
+
+#titolprof{
+   
+    color: rgb(0, 0, 0); /* Color del texto del título */
+    font-size: 15px;
+    padding: 20px; /* Espaciado interno del título */
+    text-align: right; /* Centrar el texto horizontalmente */
+}
+
+.parrafo{
+    display: flex;
+    width: 50%; 
+    box-sizing: border-box; 
+}
+.sectionblau{
+    background-color: #0095da;
+    display: flex;
+    padding: 40px;
+    width: 70%;
+    margin: 20px;
+    border-radius: 20px;
+    box-shadow:10px 10px 10px #474747cb;
+}
+.sectiongroc{
+    background-color: #dbe736;
+    display: flex;
+    padding: 40px;
+    width: 70%;
+    margin: 20px;
+    border-radius: 20px;
+    box-shadow:10px 10px 10px #474747cb;
+}
+.sectionnegre{
+    background-color: #242421;
+    color: #ffffff;
+    display: flex;
+    padding: 40px;
+    width: 70%;
+    margin: 20px;
+    border-radius: 20px;
+    box-shadow:10px 10px 10px #474747cb;
+}
+
+.number-control {
+    display: flex;
+    align-items: center;
+  }
+  
+  .number-left::before,
+  .number-right::after {
+    background-color: #333333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    color: rgb(255, 255, 255);
+    transition: background-color 0.3s;
+    cursor: pointer;
+  }
+  
+  .number-left::before {
+    content: "-";
+  }
+  
+  .number-right::after {
+    content: "+";
+  }
+  
+  .number-quantity {
+    padding: 0.25rem;
+    border: 0;
+    width: 50px;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+  }
+  
+  .number-left:hover::before,
+  .number-right:hover::after {
+    background-color: #666666;
+  }
+  

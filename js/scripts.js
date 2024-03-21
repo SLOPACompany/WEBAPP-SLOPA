@@ -20,6 +20,7 @@ function inici_sessio() {
             if (resposta.length == 0) {
                 document.getElementById("loading").style.display = "none"; 
                 window.alert("Codi de classe no vàlid");
+                eliminarText();
             } else { 
                 document.getElementById("loading").style.display = "none";
                 window.alert("S'ha iniciat correctament la sessió !");
@@ -42,6 +43,9 @@ function tanca_sessio() {
     }
 }
 
+function eliminarText() {
+    document.getElementById("introcodi").value = "";
+}
 
 
 
@@ -104,3 +108,5 @@ function inicia_sessio_professorat(){
             }
         });
 } 
+
+//SECCIO PROFESS
