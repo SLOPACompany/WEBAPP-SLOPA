@@ -20,7 +20,7 @@
 
 
 <body>
-<!-- MENU -->
+<!-- MENU ALUMNAT -->
     <div id="menu">      
         <i id="boto_2" class="fa-solid fa-clipboard-list" onclick="canvia_seccio(2)"></i>
         <i id="boto_3" class="fa-solid fa-chart-line" onclick="canvia_seccio(3)"></i>
@@ -28,6 +28,14 @@
         <i id="boto_4" class="fa-solid fa-id-card" onclick="canvia_seccio(4)"></i>
         <i id="exit" class="fa-solid fa-right-from-bracket" onclick="tanca_sessio()"></i>
     </div>
+
+<!-- MENU PROFESORAT -->
+<div id="menuprof">      
+        <i id="boto_2" class="fa-solid fa-clipboard-list" onclick="canvia_seccio(2)"></i>
+        <i id="boto_3" class="fa-solid fa-chart-line" onclick="canvia_seccio(3)"></i>
+        <i id="boto_1" class="fa-solid fa-list" onclick="canvia_seccio(1)"></i>
+        <i id="exit" class="fa-solid fa-right-from-bracket" onclick="tanca_sessio()"></i>
+</div>
 
 <!-- LOGIN ALUMNAT (Predeterminat) --> 
     <div id="seccio_0" class="seccio">
@@ -73,7 +81,7 @@
 // Verificar si la tecla presionada es Enter
               if (event.key === "Enter") {
 // Executar la funcio inici sessio
-                inici_sessio();
+            inicia_sessio_professorat();
               }
             });
             </script>
@@ -85,9 +93,16 @@
 
          </div>
 
-<!-- SECCIO 2 -->
-         <div id="seccio_2" class="seccio">
+<!-- SECCIO 2 (NORMAS) -->
+         <div id="seccio_2" class="seccio" style="max-width:1200px;margin-top:100px">
             
+            <div class="grid-container">
+                <div class="grid-item"><img src="imagen1.jpg" alt="Imagen 1"></div>
+                <div class="grid-item"><img src="imagen2.jpg" alt="Imagen 2"></div>
+                <div class="grid-item"><img src="imagen3.jpg" alt="Imagen 3"></div>
+                
+            </div>
+
          </div>
 
 <!-- SECCIO 3 -->
@@ -101,49 +116,71 @@
          </div>
 
 <!-- SECCIO PROFES -->
-<div id="seccio_PROFES" class="seccio">
-    <div id="titolprof">
-        <h1>Estas Evaluant a :</h1>
+<div id="seccio_PROFES" class="">
+    <div id="title">
+    <H1>EVALUACIÓ</H1>
     </div>
-    
-    <div class="sectionblau">
+<div id="classeeval">
+    <p>CLASSE:</p>
+</div> 
+   
+    <div class="section">
         <div class="parrafo">
-            <p>Te paper per reutilitzar?</p>
-              </div>
+         <p>Te fulls que es poden reutilitzar ?</p>
+        </div>
+        <div class="marcador">
               <div class="number-control">
-                <div class="number-left"></div>
-                <input type="number" name="number" class="number-quantity">
-                <div class="number-right"></div>
-        </div> 
-    </div>
-    <div class="sectiongroc">
-        <div class="parrafo">
-            <p>Te Restes de Menjar?</p>
-              </div>
-              <div class="number-control">
-                <div class="number-left"></div>
-                <input type="number" name="number" class="number-quantity">
-                <div class="number-right"></div>
-        </div> 
-    </div>
-    <div class="sectionnegre">
-        <div class="parrafo">
-            <p>Te bocatas ?</p>
-              </div>
-              <div class="number-control">
-                <div class="number-left"></div>
-                <input type="number" name="number" class="number-quantity">
-                <div class="number-right"></div>
-        </div> 
-    </div>
-    
-    </div> 
-    </div>
+              <div class="number-left"></div>
+              <input type="number" name="number" class="number-quantity">
+              <div class="number-right"></div>
+        </div>
+       </div> 
+       </div>
 
-  
 
+       <div class="section">
+        <div class="parrafo">
+         <p>Te restes de menjar ?</p>
+        </div>
+        <div class="marcador">
+              <div class="number-control">
+              <div class="number-left"></div>
+              <input type="number" name="number" class="number-quantity">
+              <div class="number-right"></div>
+        </div>
+       </div> 
+       </div>
+       
+<div class="section">
+         <div class="parrafo">
+             <p>Te Paper de Plata ?</p>
+         </div>
+                <div class="number-control">
+                <div class="number-left"></div>
+                <input type="number" name="number" class="number-quantity">
+                <div class="number-right"></div>
+            </div> 
+            </div>
+
+            <div class="section">
+                <div class="parrafo">
+                    <p>Te Restes de menjar ?</p>
+                </div>
+                       <div class="number-control">
+                       <div class="number-left"></div>
+                       <input type="number" name="number" class="number-quantity">
+                       <div class="number-right"></div>
+                   </div> 
+                   </div>
             
 </div>
+
+       
+
+
+
+    
+
 
 <!-- PLANTILLA LOADER -->
         <div id="loading" class="seccio">

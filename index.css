@@ -1,5 +1,4 @@
-/* Importació de la font Poppins des de Google Fonts */
-
+/* IMPORTA LA FONT Poppins DE Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
 
 html { 
@@ -21,7 +20,7 @@ body {
 }
 
 
-/* CSS MENU */
+/* CSS MENU ALUMNAT */
 #menu {
     display: none;
     justify-content: space-around;
@@ -44,26 +43,53 @@ body {
 }
 
 
+/* CSS MENU PROFESORAT*/
+#menuprof {
+    display: none;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #1088f8; /* Color de fondo del menú */
+    color: white; /* Color del texto */
+    position: fixed;
+    bottom: 0;
+    width: 100%; /* Llarg del menú */
+    padding: 20px; /* Espai intern menú */
+    box-sizing: border-box;
+}
+#menuprof i {
+    font-size: 40px; /* Tamany de iconos */
+    cursor: pointer;/* Cliceable */
+}
+
+#exit{
+    color: #f83030; 
+}
+
+
+
 /* CSS per a TOTES les seccions */
 .seccio {
     flex: 1;
     display: flex;
-    justify-content: center; /* Centra horizontalmente los elementos dentro de .seccio */
-    align-items: center; /* Centra verticalmente los elementos dentro de .seccio */
-    height: 100vh; /* Hace que .seccio ocupe toda la altura de la pantalla */
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh; 
 }
+
 
 /* CSS SECCIONS  */
 
 /*SECCIO LOGIN ALUMNAT (Predeterminat)  */
 #seccio_0 {
-    display: none;
+    display: flex;
     background-image: url('resources/fondologin2.jpg');
     background-position: center;
     background-origin: content-box;
     background-repeat: no-repeat;
     background-size:cover;
 }
+
+
 
 /*SECCIO LOGIN PROFESORAT */
 #seccio_0_1 {
@@ -75,25 +101,47 @@ body {
     background-size:cover;
 }
 
+
+
+/* SECCIO 1*/
 #seccio_1{
     display: none;
 }
 
+
+
+/* SECCIO 2 */
 #seccio_2{
     display: none;
 }
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
 
+.grid-item {
+    width: 100%;
+    padding: 0;
+}
+
+.grid-item img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+/* SECCIO 3 */
 #seccio_3{
     display: none;
 }
 
+
+/* SECCIO 4 */
 #seccio_4{
     display: none;
 }
 
-#seccio_PROFES{
-    display: none;
-}
 
 /* CSS LOGIN ALUMNAT  */
 .card {
@@ -232,12 +280,12 @@ body {
 /* PLANTILLA LOADER */
 #loading{
     display: flex;
-    position: fixed; /* Para que el loader permanezca en la misma posición independientemente del desplazamiento de la página */
+    position: fixed; 
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(255, 255, 255, 0.568); /* Fondo semi-transparente para el loader */
+    background-color: rgba(255, 255, 255, 0.568); 
     z-index: 9999;
 }
 @keyframes ldio-nxt5zzdxa1-1 {
@@ -291,57 +339,63 @@ body {
   }
   .ldio-nxt5zzdxa1 div { box-sizing: content-box; }
 
+  
 /* SECCIO PROFES */
 #seccio_PROFES{
-    display: flex;
+    display: none;
+    justify-content: space-around;
     flex-direction: column;
+    justify-content: center;  
+    align-items: center;
+    
+    box-sizing: border-box;
 }
 
-#titolprof{
-   
-    color: rgb(0, 0, 0); /* Color del texto del título */
-    font-size: 15px;
-    padding: 20px; /* Espaciado interno del título */
-    text-align: right; /* Centrar el texto horizontalmente */
-}
 
-.parrafo{
-    display: flex;
-    width: 50%; 
+#title{
+    text-align: center;       
+    background-color: #1088f8;   
+    color: white;             
+    width: 100%;             
+    padding: 0;              
     box-sizing: border-box; 
+    flex: 1;
 }
-.sectionblau{
-    background-color: #0095da;
+
+#classeeval{
     display: flex;
-    padding: 40px;
-    width: 70%;
-    margin: 20px;
-    border-radius: 20px;
-    box-shadow:10px 10px 10px #474747cb;
+}  
+
+.parrafo {
+    
+    display: flex;
+    width: 100%; 
+    height: 100%;
+    box-sizing:border-box; 
+   
 }
-.sectiongroc{
-    background-color: #dbe736;
+
+.section {
+    
+    background-color: #ffffff;
     display: flex;
-    padding: 40px;
-    width: 70%;
+    padding: 30px;
+    width: 90%;
     margin: 20px;
-    border-radius: 20px;
-    box-shadow:10px 10px 10px #474747cb;
+    border-radius: 30px;
+    border: 3px solid #000000; 
+   
 }
-.sectionnegre{
-    background-color: #242421;
-    color: #ffffff;
-    display: flex;
-    padding: 40px;
-    width: 70%;
-    margin: 20px;
-    border-radius: 20px;
-    box-shadow:10px 10px 10px #474747cb;
+
+.marcador{
+    display:flex;
+    align-items: center;
 }
 
 .number-control {
     display: flex;
-    align-items: center;
+    align-items:center;
+    justify-content:center;
   }
   
   .number-left::before,
