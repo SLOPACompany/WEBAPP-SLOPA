@@ -94,15 +94,23 @@
          </div>
 
 <!-- SECCIO 2 (NORMAS) -->
-         <div id="seccio_2" class="seccio" style="max-width:1200px;margin-top:100px">
-            
-            <div class="grid-container">
-                <div class="grid-item"><img src="imagen1.jpg" alt="Imagen 1"></div>
-                <div class="grid-item"><img src="imagen2.jpg" alt="Imagen 2"></div>
-                <div class="grid-item"><img src="imagen3.jpg" alt="Imagen 3"></div>
-                
-            </div>
+         <div id="seccio_2" class="" >
+            <div class="row">
+                <div class="columna">
+                  <img src="resources/rules/norma_1.png">
+                  <img src="resources/rules/norma_1.png">
+                </div>
+                <div class="columna">
+                  <img src="resources/rules/norma_1.png">
+                </div>
+                <div class="columna">
+                  <img src="resources/rules/norma_1.png">
+                </div>
+                <div class="columna">
+                  <img src="resources/rules/norma_1.png">
+                </div>
 
+              </div>
          </div>
 
 <!-- SECCIO 3 -->
@@ -116,7 +124,7 @@
          </div>
 
 <!-- SECCIO PROFES -->
-<div id="seccio_PROFES" class="">
+<div id="seccio_PROFES" class="seccio">
     <div id="title">
     <H1>EVALUACIÓ</H1>
     </div>
@@ -181,15 +189,65 @@
 
     
 
+<!-- PLANTILLAS ADAPTADES -->
 
 <!-- PLANTILLA LOADER -->
-        <div id="loading" class="seccio">
-         <div class="loadingio-spinner-pulse-t1q80hntfj"><div class="ldio-nxt5zzdxa1">
-            <div></div><div></div><div></div>
-            </div></div>
+<div id="loading" class="seccio">
+    <div class="loadingio-spinner-pulse-t1q80hntfj"><div class="ldio-nxt5zzdxa1">
+       <div></div><div></div><div></div>
+       </div></div>
+   </div>
+
+<!-- PLANTILLA NOTIFICACIO INICI SESSIO CORRECTE -->
+<div id="login-notify-ok">
+        <div class="notifications-container">
+            <div class="success">
+              <div class="flex">
+                <div class="flex-shrink-0">
+                  
+                  <svg class="succes-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                  </svg>
+                </div>
+                <div class="success-prompt-wrap">
+                  <p class="success-prompt-heading">S'ha iniciat correctament la sessió !
+                  </p><div class="success-prompt-prompt">
+                    
+                  </div>
+                    <div class="success-button-container">
+                      <button type="button" class="success-button-main" onclick="inicia_sessio(); ">Entrar</button>
+                      
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+</div>  
+
+<div id="login-notify-ok-profes">
+    <div class="notifications-container">
+        <div class="success">
+          <div class="flex">
+            <div class="flex-shrink-0">
+              
+              <svg class="succes-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+              </svg>
+            </div>
+            <div class="success-prompt-wrap">
+              <p class="success-prompt-heading">S'ha iniciat correctament la sessió !
+              </p><div class="success-prompt-prompt">
+                
+              </div>
+                <div class="success-button-container">
+                  <button type="button" class="success-button-main" onclick="inicia_ses_professorat();">Entrar</button>
+                  
+                </div>
+            </div>
+          </div>
         </div>
-        
-             
+      </div>
+</div>  
              
 </body>
 </html>

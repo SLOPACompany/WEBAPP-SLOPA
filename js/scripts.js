@@ -22,14 +22,15 @@ function inici_sessio() {
                 eliminarText();
             } else { 
                 document.getElementById("loading").style.display = "none";
-                window.alert("S'ha iniciat correctament la sessió !");
-                inicia_sessio(); 
+                document.getElementById("login-notify-ok").style.display = "flex";
+                
             }
         });
 } 
 //FUNCIO D'USUARI VERIFICAT
 function inicia_sessio() {
-    validat = true; 
+    validat = true;
+    document.getElementById("login-notify-ok").style.display = "none";
     document.getElementById("seccio_0").style.display = "none"; 
     document.getElementById("menu").style.display = "flex"; 
     canvia_seccio(1); 
@@ -85,9 +86,9 @@ function inicia_ses_professorat() {
     document.getElementById("seccio_0").style.display = "none";
     document.getElementById("seccio_0_1").style.display = "none";
     document.getElementById("menu").style.display = "none";
-    document.getElementById("seccio_PROFES").style.display = "flex";
     document.getElementById("menuprof").style.display = "flex";
-    
+    document.getElementById("seccio_PROFES").style.display = "flex";
+    document.getElementById("login-notify-ok-profes").style.display = "none";
     
 }
 
@@ -106,8 +107,8 @@ function inicia_sessio_professorat(){
                 eliminarText();
             } else { 
                 document.getElementById("loading").style.display = "none";
-                window.alert("S'ha iniciat correctament la sessió.");
-                inicia_ses_professorat()
+                document.getElementById("login-notify-ok-profes").style.display = "flex";
+                
             }
         });
 } 

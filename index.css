@@ -16,7 +16,7 @@ body {
     min-height: -webkit-fill-available;    
     margin: 0px;    /* elimina tots els marges del document */
     font-family: "Poppins", sans-serif;    /* un tipus de lletra adient per a llocs web */
-    background-color: #ffffff;    /* color de fons en format #RRGGBB */
+    background-color: #d8d8d8;    /* color de fons en format #RRGGBB */
 }
 
 
@@ -25,17 +25,18 @@ body {
     display: none;
     justify-content: space-around;
     align-items: center;
-    background-color: #1088f8; /* Color de fondo del menú */
-    color: white; /* Color del texto */
+    background-color: #1088f8; 
+    color: white; 
     position: fixed;
     bottom: 0;
-    width: 100%; /* Llarg del menú */
-    padding: 20px; /* Espai intern menú */
+    width: 100%; 
+    padding: 20px; 
     box-sizing: border-box;
+    z-index: 999;
 }
 #menu i {
-    font-size: 40px; /* Tamany de iconos */
-    cursor: pointer;/* Cliceable */
+    font-size: 40px; 
+    cursor: pointer;
 }
 
 #exit{
@@ -43,25 +44,28 @@ body {
 }
 
 
-/* CSS MENU PROFESORAT*/
+/* CSS MENU PROFESORAT */
 #menuprof {
     display: none;
     justify-content: space-around;
     align-items: center;
-    background-color: #1088f8; /* Color de fondo del menú */
-    color: white; /* Color del texto */
+    background-color: #1088f8; 
+    color: white; 
     position: fixed;
     bottom: 0;
-    width: 100%; /* Llarg del menú */
-    padding: 20px; /* Espai intern menú */
+    left: 0; 
+    width: 100%; 
+    padding: 20px; 
     box-sizing: border-box;
-}
-#menuprof i {
-    font-size: 40px; /* Tamany de iconos */
-    cursor: pointer;/* Cliceable */
+    z-index: 999; 
 }
 
-#exit{
+#menuprof i {
+    font-size: 40px; 
+    cursor: pointer; 
+}
+
+#exit {
     color: #f83030; 
 }
 
@@ -114,21 +118,36 @@ body {
 #seccio_2{
     display: none;
 }
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
-}
-
-.grid-item {
+.row {
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
+    flex: 1;
+  }
+  
+  .columna {
+    flex: 25%;
+    max-width: 23%;
+  } 
+  .columna img {
+    margin-top: 4px;
+    vertical-align: middle;
     width: 100%;
-    padding: 0;
-}
+  }
+  @media screen and (max-width: 800px) {
+    .columna {
+      flex: 50%;
+      max-width: 50%;
+    }
+  }
+  @media screen and (max-width: 600px) {
+    .columna {
+      flex: 100%;
+      max-width: 100%;
+    }
+  }
 
-.grid-item img {
-    max-width: 100%;
-    height: auto;
-}
 
 
 /* SECCIO 3 */
@@ -276,7 +295,101 @@ body {
 }
 
 
+/* PLANTILLA NOTFICACIO LOGIN CORRECTE */
+#login-notify-ok{
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(88, 87, 87, 0.637); 
+  justify-content: center;
+  align-items: center;
 
+}
+#login-notify-ok-profes{
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(88, 87, 87, 0.637); 
+  justify-content: center;
+  align-items: center;
+
+}
+.notifications-container {
+    width: 320px;
+    height: auto;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .flex {
+    display: flex;
+  }
+  
+  .flex-shrink-0 {
+    flex-shrink: 0;
+  }
+  
+  .success {
+    padding: 1rem;
+    border-radius: 0.375rem;
+    background-color: rgb(240 253 244);
+  }
+  
+  .succes-svg {
+    color: rgb(74 222 128);
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+  
+  .success-prompt-wrap {
+    margin-left: 0.75rem;
+  }
+  
+  .success-prompt-heading {
+    font-weight: bold;
+    color: rgb(65, 163, 102);
+  }
+  
+  .success-prompt-prompt {
+    margin-top: 0.5rem;
+    color: rgb(65, 163, 102);
+  }
+  
+  .success-button-container {
+   
+    justify-content: left;
+    display: flex;
+    margin-top: 0.875rem;
+    margin-bottom: -0.375rem;
+    margin-left: -0.5rem;
+    margin-right: -0.5rem;
+  }
+  
+  .success-button-main {
+    padding-top: 0.375rem;
+    padding-bottom: 0.375rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    background-color: #249145;
+    color: rgb(255, 255, 255);
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: bold;
+    border-radius: 0.375rem;
+    border: none
+  }
+  
+  
+  
 /* PLANTILLA LOADER */
 #loading{
     display: flex;
@@ -338,6 +451,8 @@ body {
     transform-origin: 0 0; 
   }
   .ldio-nxt5zzdxa1 div { box-sizing: content-box; }
+
+  
 
   
 /* SECCIO PROFES */
