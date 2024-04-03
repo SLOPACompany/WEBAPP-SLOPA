@@ -121,6 +121,31 @@ body {
     display: none;
 }
 
+.welcome-container {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  display: flex; 
+  align-items: center; 
+  position: fixed;
+    top: 50px; 
+    left: 40px; 
+}
+
+.welcome-text, .secondary-text {
+  color: rgb(0, 0, 0);
+  font-size: 40px;
+  font-weight: bold;
+  margin-right: 20px; 
+}
+
+.secondary-text {
+  color: rgb(0, 0, 0);
+    font-weight: 700;
+}
+
+
+
 
 
 /* SECCIO 2 */
@@ -386,7 +411,7 @@ body {
   .success-button-container {
    
     justify-content: right;
-    margin-right:100px ;
+    margin-right:110px ;
     display: flex;
     margin-top: 0.875rem;
     margin-bottom: -0.375rem;
@@ -460,6 +485,7 @@ body {
   .failed-prompt-heading {
     font-weight: bold;
     color: rgb(204, 52, 52);
+    margin-left: 30px;
   }
   
   .failed-prompt-prompt {
@@ -470,7 +496,7 @@ body {
   .failed-button-container {
    
     justify-content: right;
-    margin-right:90px ;
+    margin-right:55px ;
     display: flex;
     margin-top: 0.875rem;
     margin-bottom: -0.375rem;

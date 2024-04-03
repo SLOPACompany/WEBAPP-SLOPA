@@ -88,6 +88,9 @@ function canvia_seccio(num_boto) {
     }
 }
 
+//FUNCIO DE POSAR GRAFICA
+
+
 //FUNCIOS PER A PROFESORAT:
 //FUNCIO CANVI LOGIN
 function canviloginprof(){
