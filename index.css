@@ -1,14 +1,14 @@
-/* Importació de la font Poppins des de Google Fonts */
+/* IMPORTA LA FONT Poppins DE Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
 
 html { 
-    height: -webkit-fill-available;    /* per a dispositius mòbils */
+    height: -webkit-fill-available; 
 }
 
 
 /* body */
 body {
-    display: flex;    /* tipus de display que ofereix més prestacions que block */
+    display: flex;    
     flex-direction: column;    /* els elements es disposen de dalt cap abaix */
     justify-content: space-between;    /* els elements, separats per espais, ocupen tot l'espai disponibles */
     min-height: 100vh;    /* alçària de la pantalla en navegadors d'escriptori */  
@@ -16,43 +16,83 @@ body {
     min-height: -webkit-fill-available;    
     margin: 0px;    /* elimina tots els marges del document */
     font-family: "Poppins", sans-serif;    /* un tipus de lletra adient per a llocs web */
-    background-color: #ffffff;    /* color de fons en format #RRGGBB */
+    background-color: #d8d8d8;    /* color de fons en format #RRGGBB */
 }
 
 
-/* CSS MENU */
+/* CSS MENU ALUMNAT */
 #menu {
+  display: none;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #1088f8; 
+  color: white; 
+  position: fixed;
+  bottom: 0;
+  width: 100%; 
+  padding: 20px; 
+  box-sizing: border-box;
+  z-index: 999;
+}
+
+#menu i {
+  font-size: 35px; 
+  cursor: pointer;
+  text-align: center; 
+}
+
+.optionmenu1 {
+  text-align: center;
+  margin-top: 5px; 
+}
+
+.optionmenu1 p {
+  font-size: 13px;
+  font-weight: 500; 
+  margin: 0;
+}
+
+
+/* CSS MENU PROFESORAT */
+#menuprof {
     display: none;
     justify-content: space-around;
     align-items: center;
-    background-color: #1088f8; /* Color de fondo del menú */
-    color: white; /* Color del texto */
+    background-color: #1088f8; 
+    color: white; 
     position: fixed;
     bottom: 0;
-    width: 100%; /* Llarg del menú */
-    padding: 20px; /* Espai intern menú */
+    left: 0; 
+    width: 100%; 
+    padding: 20px; 
     box-sizing: border-box;
-}
-#menu i {
-    font-size: 40px; /* Tamany de iconos */
-    cursor: pointer;/* Cliceable */
+    z-index: 999; 
 }
 
-#exit{
+#menuprof i {
+    font-size: 40px; 
+    cursor: pointer; 
+}
+
+#exit {
     color: #f83030; 
 }
+
 
 
 /* CSS per a TOTES les seccions */
 .seccio {
     flex: 1;
     display: flex;
-    justify-content: center; /* Centra horizontalmente los elementos dentro de .seccio */
-    align-items: center; /* Centra verticalmente los elementos dentro de .seccio */
-    height: 100vh; /* Hace que .seccio ocupe toda la altura de la pantalla */
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh; 
 }
 
+
 /* CSS SECCIONS  */
+
+/*SECCIO LOGIN ALUMNAT (Predeterminat)  */
 #seccio_0 {
     display: flex;
     background-image: url('resources/fondologin2.jpg');
@@ -62,6 +102,9 @@ body {
     background-size:cover;
 }
 
+
+
+/*SECCIO LOGIN PROFESORAT */
 #seccio_0_1 {
     display: none;
     background-image: url('resources/fondologin2.jpg');
@@ -71,25 +114,97 @@ body {
     background-size:cover;
 }
 
+
+
+/* SECCIO 1*/
 #seccio_1{
     display: none;
 }
 
-#seccio_2{
-    display: none;
+.welcome-container {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  display: flex; 
+  align-items: center; 
+  position: fixed;
+    top: 50px; 
+    left: 40px; 
 }
 
+.welcome-text, .secondary-text {
+  color: rgb(0, 0, 0);
+  font-size: 40px;
+  font-weight: bold;
+  margin-right: 20px; 
+}
+
+.secondary-text {
+  color: rgb(0, 0, 0);
+    font-weight: 700;
+}
+
+
+
+
+
+/* SECCIO 2 */
+#seccio_2 {
+  display: none;
+  top: 100%;
+  transform: translateY(30%);
+
+}
+
+.row {
+  justify-content: center; /* Centra horizontalmente los elementos */
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+  flex: 1;
+}
+
+.columna {
+  flex: 25%;
+  max-width: 23%;
+  display: flex;
+  justify-content: center; /* Centra horizontalmente las imágenes */
+}
+
+.columna img {
+  margin-top: 8px;
+  vertical-align: middle;
+  max-width: 100%; /* Ajusta el ancho máximo de las imágenes al 100% */
+}
+
+
+@media screen and (max-width: 600px) {
+  #seccio_2{
+    top: 100%;
+  transform: translateY(0%);
+  }
+  #ultimafotonormas{
+    margin-bottom: 80px;
+  }
+  .columna {
+      flex: 100%;
+      max-width: 100%;
+  }
+}
+
+
+
+/* SECCIO 3 */
 #seccio_3{
     display: none;
 }
 
+
+/* SECCIO 4 */
 #seccio_4{
     display: none;
 }
 
-#seccio_PROFES{
-    display: none;
-}
 
 /* CSS LOGIN ALUMNAT  */
 .card {
@@ -134,6 +249,7 @@ body {
     border-radius: 14px;
     border: 2px solid rgb(78, 78, 78);
     color: rgb(0, 0, 0);
+    
 }
 .card__form button {
     margin-top: 7px;
@@ -213,7 +329,6 @@ body {
 .sign-up:hover {
     background-color: #24914598;
 }
-
 #textprofe{
     font-size: 13px;
     font-weight:500;
@@ -224,18 +339,206 @@ body {
 }
 
 
+/* PLANTILLA NOTFICACIO LOGIN CORRECTE */
+#login-notify-ok{
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(88, 87, 87, 0.637); 
+  justify-content: center;
+  align-items: center;
 
+}
+#login-notify-ok-profes{
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(88, 87, 87, 0.637); 
+  justify-content: center;
+  align-items: center;
+
+}
+.notifications-container {
+    width: 320px;
+    height: auto;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .flex {
+    display: flex;
+  }
+  
+  .flex-shrink-0 {
+    flex-shrink: 0;
+  }
+  
+  .success {
+    padding: 1rem;
+    border-radius: 0.375rem;
+    background-color: rgb(240 253 244);
+  }
+  
+  .succes-svg {
+    color: rgb(74 222 128);
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+  
+  .success-prompt-wrap {
+    margin-left: 0.75rem;
+  }
+  
+  .success-prompt-heading {
+    font-weight: bold;
+    color: rgb(65, 163, 102);
+  }
+  
+  .success-prompt-prompt {
+    margin-top: 0.5rem;
+    color: rgb(65, 163, 102);
+  }
+  
+  .success-button-container {
+   
+    justify-content: right;
+    margin-right:110px ;
+    display: flex;
+    margin-top: 0.875rem;
+    margin-bottom: -0.375rem;
+    margin-left: -0.5rem;
+    
+  }
+  
+  .success-button-main {
+    padding-top: 0.375rem;
+    padding-bottom: 0.375rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    background-color: #249145;
+    color: rgb(255, 255, 255);
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: bold;
+    border-radius: 0.375rem;
+    border: none
+  }
+
+  /* PLANTILLA NOTFICACIO LOGIN INCORRECTE */
+#login-notify-error{
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(88, 87, 87, 0.637); 
+  justify-content: center;
+  align-items: center;
+
+}
+
+
+.notifications-container2{
+    width: 320px;
+    height: auto;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+  align-items: center;
+  }
+  
+  .flex {
+    display: flex;
+  }
+  
+  .flex-shrink-0 {
+    flex-shrink: 0;
+  }
+  
+  .failed {
+    padding: 1rem;
+    border-radius: 0.375rem;
+    background-color: rgb(240 253 244);
+  }
+  
+  .failed-svg {
+    color: rgb(204, 52, 52);
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+  
+  .failed-prompt-wrap {
+    margin-left: 0.75rem;
+  }
+  
+  .failed-prompt-heading {
+    font-weight: bold;
+    color: rgb(204, 52, 52);
+    margin-left: 30px;
+  }
+  
+  .failed-prompt-prompt {
+    margin-top: 0.5rem;
+    color: rgb(204, 52, 52);
+    justify-content: center;
+  align-items: center;
+  }
+  
+  .failed-button-container {
+   
+    justify-content: right;
+    margin-right:55px ;
+    display: flex;
+    margin-top: 0.875rem;
+    margin-bottom: -0.375rem;
+    margin-left: -0.5rem;
+    justify-content: center;
+  align-items: center;
+    
+  }
+  
+  .failed-button-main {
+    padding-top: 0.375rem;
+    padding-bottom: 0.375rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    background-color:rgb(204, 52, 52);
+    color: rgb(255, 255, 255);
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: bold;
+    border-radius: 0.375rem;
+    border: none;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  
+  
+/* PLANTILLA LOADER */
 #loading{
     display: flex;
-    position: fixed; /* Para que el loader permanezca en la misma posición independientemente del desplazamiento de la página */
+    position: fixed; 
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(255, 255, 255, 0.568); /* Fondo semi-transparente para el loader */
+    background-color: rgba(255, 255, 255, 0.568); 
     z-index: 9999;
 }
-/* PLANTILLA LOADER */
 @keyframes ldio-nxt5zzdxa1-1 {
     0% { top: 36px; height: 128px }
     50% { top: 60px; height: 80px }
@@ -286,3 +589,85 @@ body {
     transform-origin: 0 0; 
   }
   .ldio-nxt5zzdxa1 div { box-sizing: content-box; }
+
+  
+
+  
+/* SECCIO PROFES */
+#seccio_5{
+  display: none;
+  flex-direction: column;
+  justify-content: center;  
+  align-items: center;
+  
+}
+
+#classeeval{
+    display: flex;
+}  
+
+.parrafo {
+    
+    display: flex;
+    width: 100%; 
+    height: 100%;
+    box-sizing:border-box; 
+   
+}
+
+.section {
+    
+    background-color: #ffffff;
+    display: flex;
+    padding: 30px;
+    width: 90%;
+    margin: 20px;
+    border-radius: 30px;
+    border: 3px solid #000000; 
+   
+}
+
+.marcador{
+    display:flex;
+    align-items: center;
+}
+
+.number-control {
+    display: flex;
+    align-items:center;
+    justify-content:center;
+  }
+  
+  .number-left::before,
+  .number-right::after {
+    background-color: #333333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    color: rgb(255, 255, 255);
+    transition: background-color 0.3s;
+    cursor: pointer;
+  }
+  
+  .number-left::before {
+    content: "-";
+  }
+  
+  .number-right::after {
+    content: "+";
+  }
+  
+  .number-quantity {
+    padding: 0.25rem;
+    border: 0;
+    width: 50px;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+  }
+  
+  .number-left:hover::before,
+  .number-right:hover::after {
+    background-color: #666666;
+  }
+  

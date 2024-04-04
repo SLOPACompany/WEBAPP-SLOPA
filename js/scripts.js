@@ -1,73 +1,107 @@
-//SCRIPT LODAER (despareixer al carregar pagina)
-window.onload=function(){
-    $('#loading').fadeOut();
-}
-
-//VARIABLESS
+//VARIABLES 
+let basedades;
+let scriptURL = "https://script.google.com/macros/s/AKfycbxeC47xF70GvKHp4sfxZ5nBuX93ln05D6kyP4z_qt5vVEEvDJCZyFRc62oBra3eL-lx/exec"; 
 let validat = false; 
 let codiclasse;
-let scriptURL = "https://script.google.com/macros/s/AKfycbxeC47xF70GvKHp4sfxZ5nBuX93ln05D6kyP4z_qt5vVEEvDJCZyFRc62oBra3eL-lx/exec"; 
-let CLASSE
+let classe
+let clase_trobada = false;
 
-//LOGIN SCRIPT
+//SCRIPT AL CARREGAR PAGINA  (despareixer el loader carregar pagina & Consultar tota la database + assignacio a variable)
+window.onload=function(){
+
+    let consulta2 = scriptURL + "?query=select";
+    fetch(consulta2)
+        .then((res) => {
+          return res.json();
+     })
+        .then((data) => {
+         basedades = data;
+        })
+     .catch((error) => {
+         console.error('Error al fer la consulta:', error);
+     });
+     
+   $('#loading').fadeOut();
+}
+
+
+
+//FUNCIO LOGIN SCRIPT ALUMNAT (predeterminat)
 function inici_sessio() {
     document.getElementById("loading").style.display = "flex"; 
     codiclasse = document.getElementById("introcodi").value; 
-    let consulta = scriptURL + "?query=select&where=codiclasse&is=" + codiclasse;
-    fetch(consulta)
-        .then((resposta) => resposta.json())
-        .then((resposta) => {
-            if (resposta.length == 0) {
-                document.getElementById("loading").style.display = "none"; 
-                window.alert("Codi de classe no vàlid");
-            } else { 
-                document.getElementById("loading").style.display = "none";
-                window.alert("S'ha iniciat correctament la sessió !");
-                inicia_sessio(); 
-            }
-        });
-} 
+    for (let i = 0; i < basedades.length; i++) {
+        if (basedades[i]["codiclasse"]==codiclasse) { 
+            classe=(basedades[i]["classe"]);  
+            clase_trobada = true;
+        }
+    }
+    if (clase_trobada == true) {
+        document.getElementById("loading").style.display = "none"; 
+        document.getElementById("login-notify-ok").style.display = "flex";
+        classe_text();
+        eliminarText();
 
-function inicia_sessio() {
-    validat = true; // usuari validat
-    document.getElementById("seccio_0").style.display = "none"; 
-    document.getElementById("menu").style.display = "flex"; 
-    canvia_seccio(1); // es mostra la secció 1
+    } else {
+        document.getElementById("loading").style.display = "none";
+        document.getElementById("login-notify-error").style.display = "flex";
+    }
+}  
+
+//FUNCIO INDICAR TEXT CLASSE
+function classe_text(){
+    document.getElementById("textclasse").innerText = classe;
 }
 
+
+//FUNCIO D'USUARI VERIFICAT
+function inicia_sessio() {
+    validat = true;
+    document.getElementById("login-notify-ok").style.display = "none";
+    document.getElementById("seccio_0").style.display = "none"; 
+    document.getElementById("menu").style.display = "flex"; 
+    canvia_seccio(1); 
+}
+
+//FUNCIO TANCAR SESSIO USUARI
 function tanca_sessio() {
     if (validat) {
-        validat = false; // usuari desvalidat
-        location.reload(); // recàrrega de la pàgina, es reinicialitzen totes les variables
+        validat = false; 
+        location.reload(); 
     }
 }
 
+//FUNCIO PER TREURE TOTS ELS TEXTOS DEL INPUT
+function eliminarText() {
+    document.getElementById("introcodi").value = "";
+    document.getElementById("introcodiprof").value = "";
+    document.getElementById("introcontraprof").value = "";
+}
 
-//MENU SCRIP
+//FUNCIO CANVI DE PAGINES EN MENU
 function canvia_seccio(num_boto) {
     const menu = document.getElementById("menu");
-    const num_botons = menu.children.length; // el nombre de botons dins de l'element "menu"
+    const num_botons = menu.children.length; 
     for (let i = 1; i < num_botons; i++) {
         let boto = document.getElementById("boto_" + i);
         let seccio = document.getElementById("seccio_" + i);
         if (i == num_boto) {
-            boto.style.color = "#8b8b8b"; // es destaca la secció activa amb el canvi de colors del botó corresponent
-            boto.style.backgroundColor =""; //color cuant seleciones un item
-            seccio.style.display = "flex"; // es fa visible la secció activa
+            boto.style.color = "#8b8b8b"; 
+            boto.style.backgroundColor =""; 
+            seccio.style.display = "flex"; 
         } else {
-            boto.style.color = "white"; // colors dels botons de seccions inactives
+            boto.style.color = "white"; 
             boto.style.backgroundColor = "";
-            seccio.style.display = "none"; // s'oculten les seccions inactives
+            seccio.style.display = "none"; 
         }
     }
 }
 
+//FUNCIO DE POSAR GRAFICA
 
 
-
-//FUNCIOS PER A PROFESORAT
-
-//CANVI LOGIN
+//FUNCIOS PER A PROFESORAT:
+//FUNCIO CANVI LOGIN
 function canviloginprof(){
     document.getElementById("loading").style.display = "flex";
     document.getElementById("seccio_0").style.display = "none";
@@ -75,13 +109,15 @@ function canviloginprof(){
     document.getElementById("loading").style.display = "none";
 } 
 
-//BOTO INICAR SESSIO
+//FUNCIO INICAR SESSIO
 function inicia_ses_professorat() {
-    validat = true; // usuari validat
+    validat = true; 
     document.getElementById("seccio_0").style.display = "none";
     document.getElementById("seccio_0_1").style.display = "none";
     document.getElementById("menu").style.display = "none";
-    document.getElementById("seccio_PROFES").style.display = "flex"; 
+    document.getElementById("menuprof").style.display = "flex";
+    document.getElementById("seccio_5").style.display = "none";
+    document.getElementById("login-notify-ok-profes").style.display = "none";
     
 }
 
@@ -94,14 +130,17 @@ function inicia_sessio_professorat(){
     fetch(consulta)
         .then((resposta) => resposta.json())
         .then((resposta) => {
-            if (resposta.length == 0) { // llista buida
+            if (resposta.length === 0) { 
                 document.getElementById("loading").style.display = "none";
-                window.alert("El nom d'usuari o la contrasenya no són correctes.");
-            } else { // llista amb (almenys) un registre
+                document.getElementById("login-notify-error").style.display = "flex";
+                eliminarText();
+            } else { 
                 document.getElementById("loading").style.display = "none";
-                window.alert("S'ha iniciat correctament la sessió.");
-                inicia_ses_professorat()
+                document.getElementById("login-notify-ok-profes").style.display = "flex";
             }
         });
 } 
 
+function sorirbtnoti(){
+    document.getElementById("login-notify-error").style.display = "none";
+}
