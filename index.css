@@ -132,15 +132,6 @@ body {
     left: 40px; 
 }
 
-<<<<<<< HEAD
-@media screen and (max-width: 600px) {
-  .welcome-text, .secondary-text {
-      font-size: 18px; 
-  }
-}
-
-=======
->>>>>>> 4a36737f23e7f3c37ec89d38028e10346a702c76
 .welcome-text, .secondary-text {
   color: rgb(0, 0, 0);
   font-size: 40px;
