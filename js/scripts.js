@@ -3,19 +3,19 @@ let basedades;
 let scriptURL = "https://script.google.com/macros/s/AKfycbxeC47xF70GvKHp4sfxZ5nBuX93ln05D6kyP4z_qt5vVEEvDJCZyFRc62oBra3eL-lx/exec"; 
 let validat = false; 
 let codiclasse;
+let classe
+let clase_trobada = false;
 
-//SCRIPT AL CARREGAR PAGINA  (despareixer el loader carregar pagina & Consulta database)
+//SCRIPT AL CARREGAR PAGINA  (despareixer el loader carregar pagina & Consultar tota la database + assignacio a variable)
 window.onload=function(){
 
     let consulta2 = scriptURL + "?query=select";
-    let basedades;
     fetch(consulta2)
         .then((res) => {
           return res.json();
      })
         .then((data) => {
          basedades = data;
-         console.log(basedades);
         })
      .catch((error) => {
          console.error('Error al fer la consulta:', error);
@@ -30,20 +30,29 @@ window.onload=function(){
 function inici_sessio() {
     document.getElementById("loading").style.display = "flex"; 
     codiclasse = document.getElementById("introcodi").value; 
-    let consulta = scriptURL + "?query=select&where=codiclasse&is=" + codiclasse;
-    fetch(consulta)
-        .then((resposta) => resposta.json())
-        .then((resposta) => {
-            if (resposta.length == 0) {
-                document.getElementById("loading").style.display = "none"; 
-                document.getElementById("login-notify-error").style.display = "flex";
-                eliminarText();
-            } else { 
-                document.getElementById("loading").style.display = "none";
-                document.getElementById("login-notify-ok").style.display = "flex";
-            }
-        });
-} 
+    for (let i = 0; i < basedades.length; i++) {
+        if (basedades[i]["codiclasse"]==codiclasse) { 
+            classe=(basedades[i]["classe"]);  
+            clase_trobada = true;
+        }
+    }
+    if (clase_trobada == true) {
+        document.getElementById("loading").style.display = "none"; 
+        document.getElementById("login-notify-ok").style.display = "flex";
+        classe_text();
+        eliminarText();
+
+    } else {
+        document.getElementById("loading").style.display = "none";
+        document.getElementById("login-notify-error").style.display = "flex";
+    }
+}  
+
+//FUNCIO INDICAR TEXT CLASSE
+function classe_text(){
+    document.getElementById("textclasse").innerText = classe;
+}
+
 
 //FUNCIO D'USUARI VERIFICAT
 function inicia_sessio() {
@@ -87,6 +96,9 @@ function canvia_seccio(num_boto) {
         }
     }
 }
+
+//FUNCIO DE POSAR GRAFICA
+
 
 //FUNCIOS PER A PROFESORAT:
 //FUNCIO CANVI LOGIN
