@@ -82,6 +82,7 @@ body {
 
 /* CSS per a TOTES les seccions */
 .seccio {
+  
     flex: 1;
     display: flex;
     justify-content: center; 
@@ -119,6 +120,9 @@ body {
 /* SECCIO 1*/
 #seccio_1{
     display: none;
+    background-image: url('resources/fondo.png');
+    background-size: cover;
+    background-position: center; 
 }
 
 .welcome-container {
@@ -134,7 +138,7 @@ body {
 
 .welcome-text, .secondary-text {
   color: rgb(0, 0, 0);
-  font-size: 40px;
+  font-size: 30px;
   font-weight: bold;
   margin-right: 20px; 
 }
@@ -204,6 +208,7 @@ body {
 #seccio_4{
     display: none;
 }
+
 
 
 /* CSS LOGIN ALUMNAT  */
@@ -488,6 +493,7 @@ body {
     font-weight: bold;
     color: rgb(204, 52, 52);
     margin-left: 30px;
+    margin-right: 55px;
   }
   
   .failed-prompt-prompt {

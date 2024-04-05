@@ -8,7 +8,6 @@ let clase_trobada = false;
 
 //SCRIPT AL CARREGAR PAGINA  (despareixer el loader carregar pagina & Consultar tota la database + assignacio a variable)
 window.onload=function(){
-
     let consulta2 = scriptURL + "?query=select";
     fetch(consulta2)
         .then((res) => {
@@ -16,12 +15,11 @@ window.onload=function(){
      })
         .then((data) => {
          basedades = data;
+         $('#loading').fadeOut();
         })
      .catch((error) => {
          console.error('Error al fer la consulta:', error);
      });
-     
-   $('#loading').fadeOut();
 }
 
 
@@ -41,12 +39,12 @@ function inici_sessio() {
         document.getElementById("login-notify-ok").style.display = "flex";
         classe_text();
         eliminarText();
-
     } else {
         document.getElementById("loading").style.display = "none";
         document.getElementById("login-notify-error").style.display = "flex";
     }
 }  
+
 
 //FUNCIO INDICAR TEXT CLASSE
 function classe_text(){
@@ -78,6 +76,7 @@ function eliminarText() {
     document.getElementById("introcontraprof").value = "";
 }
 
+
 //FUNCIO CANVI DE PAGINES EN MENU
 function canvia_seccio(num_boto) {
     const menu = document.getElementById("menu");
@@ -97,7 +96,6 @@ function canvia_seccio(num_boto) {
     }
 }
 
-//FUNCIO DE POSAR GRAFICA
 
 
 //FUNCIOS PER A PROFESORAT:
@@ -108,6 +106,7 @@ function canviloginprof(){
     document.getElementById("seccio_0_1").style.display = "flex";
     document.getElementById("loading").style.display = "none";
 } 
+
 
 //FUNCIO INICAR SESSIO
 function inicia_ses_professorat() {
@@ -120,6 +119,7 @@ function inicia_ses_professorat() {
     document.getElementById("login-notify-ok-profes").style.display = "none";
     
 }
+
 
 //LOGIN CLASSE I CONTRASENYA PROFESORAT
 function inicia_sessio_professorat(){
@@ -141,6 +141,7 @@ function inicia_sessio_professorat(){
         });
 } 
 
+//FUNCIO  BOTO NOTIFI ERROR
 function sorirbtnoti(){
     document.getElementById("login-notify-error").style.display = "none";
 }
