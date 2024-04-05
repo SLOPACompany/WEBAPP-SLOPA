@@ -9,6 +9,7 @@
 <!--JS-->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="js/graphs.js" type="text/javascript"></script>
+    <script src="js/charts.js"></script>
     <script src="js/scripts.js"></script>
 <!-- fonts icon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/solid.min.css"> 
@@ -17,11 +18,10 @@
 <!-- TITLE -->
     <title>SLOPA Recycling</title>
 </head> 
-
-
 <body>
+
 <!-- MENU ALUMNAT -->
-    <div id="menu"> 
+  <div id="menu"> 
       <div class="optionmenu1">          
         <i id="boto_2" class="fa-solid fa-clipboard-list" onclick="canvia_seccio(2)"></i>
         <p >Normes</p>
@@ -42,10 +42,10 @@
         <i id="exit" class="fa-solid fa-right-from-bracket" onclick="tanca_sessio()"></i>
         <p>Sortir</p>
       </div>
-    </div>
+  </div>
 
 <!-- MENU PROFESORAT -->
-<div id="menuprof">   
+  <div id="menuprof">   
         <div class="optionmenu1"> 
         <i id="boto_2" class="fa-solid fa-clipboard-list" onclick="canvia_seccio(2)"></i>
         <p>Normes</p>
@@ -62,10 +62,10 @@
         <i id="exit" class="fa-solid fa-right-from-bracket" onclick="tanca_sessio()"></i>
         <p>Sortir</p>
         </div>
-</div>
+  </div>
 
 <!-- LOGIN ALUMNAT (Predeterminat) --> 
-    <div id="seccio_0" class="seccio">
+  <div id="seccio_0" class="seccio">
         <div class="card">
                 <img src="resources/logo.png" id="fotologin">
                 <span class="card__title">INICI SESSIÓ</span>
@@ -76,18 +76,15 @@
                 <button class="sign-up" onclick="inici_sessio()">Iniciar Sessió</button>
                 <p id="textprofe" onclick="canviloginprof()">Ets Professor?</p>
         </div>
-    </div>
-
-             <script>
-            document.getElementById("introcodi").addEventListener("keydown", function(event) {
-// Verificar si la tecla presionada es Enter
-              if (event.key === "Enter") {
-// Executar la funcio
-                inici_sessio();
-              }
-            });
-            </script>
         </div>
+    <script>
+      document.getElementById("introcodi").addEventListener("keydown", function(event) {
+          if (event.key === "Enter") {
+             inici_sessio();
+          }
+          });
+    </script>
+  </div>
 
         
 <!-- LOGIN PROFESORAT -->
@@ -116,20 +113,15 @@
 
     
 <!-- SECCIO 1 -->
-         <div id="seccio_1" class="seccio">
-          
+    <div id="seccio_1" class="seccio">
           <div class="welcome-container">
             <div class="welcome-text">👋 Benvingut,   </div>
             <div id="textclasse"  class="secondary-text">(classe)</div>
         </div>
-          
-          
-         
-  
-         </div>
+    </div>
          
 <!-- SECCIO 2 (NORMAS) -->
-         <div id="seccio_2" class="" >
+  <div id="seccio_2" class="" >
             <div class="row">
                 <div class="columna">
                   <img src="resources/rules/PAPERDEPLATA.png">
@@ -144,59 +136,68 @@
                   <img id="ultimafotonormas" src="resources/rules/Residuforadelloc.png">
                 </div>
               </div>
-         </div>
+  </div>
 
 <!-- SECCIO 3 (Ranking) -->
-         <div id="seccio_3" class="seccio">
-          <script>
-           var graph = new BAR_GRAPH("hBar");
-  graph.values = "100,100,100,100,100,100,100,100,100,100,100,100";
-  graph.labels = "1rA,1rB,1rC,2nA,2nB,2nC,3rA,3rB,3rC,4rA,4rB,4rC";
-  graph.showValues = 2;
-  graph.barWidth = 30;
-  graph.barLength = 10;
-  graph.labelSize = 30;
-  graph.absValuesSize = 30;
-  graph.percValuesSize = 12;
-  graph.barColors = "#0e701d";
-  graph.barBGColor = "#e2e2e2";
-  graph.labelColor = "#000000";
-  graph.labelBGColor = "#C0E0FF";
-  graph.labelBorder = "10px";
-  graph.absValuesColor = "#f9f9f9";
-  graph.absValuesBGColor = "#0e4765";
-  graph.absValuesBorder = "2px";
-          document.write(graph.create());
-          </script>
-        </div>
+  <div id="seccio_3" class="seccio">
+
+          <canvas id="myChart"></canvas>
+
+ <script>
+  var classes_grafic = ['1rA', '1rB', '1rC', '2nA', '2nB', '2nC', '3rA', '3rB', '3rC', '4rA', '4rB', '4rC'];
+  var puntuacio_grafic = [150, 90, 45, 100, 100, 134, 154, 100, 105, 100, 146, 143];
+
+  var ctx = document.getElementById('myChart').getContext('2d');
+  var myChart = new Chart(ctx, {
+    type: 'horizontalBar',
+    data: {
+      labels: classes_grafic,
+      datasets: [{
+        data: puntuacio_grafic,
+        backgroundColor: '#72b01d',
+        borderColor: '#72b01d',
+        borderWidth: 5,
+        label: "Puntuació", 
+      }]
+    },
+    options: {
+      scales: {
+        x: {
+          beginAtZero: true,
+        },
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+ </script>
+  </div>
+
 
 <!-- SECCIO 4 -->
-         <div id="seccio_4" class="seccio">
+<div id="seccio_4" class="seccio">
             
-         </div>
+</div>
 
 <!-- SECCIO PROFES -->
 <div id="seccio_5" class="seccio">
-    
-
-            
-            
+         
 </div>
 
        
 
 
 <!-- PLANTILLAS ADAPTADES -->
-
 <!-- PLANTILLA LOADER -->
-<div id="loading" class="seccio">
+  <div id="loading" class="seccio">
     <div class="loadingio-spinner-pulse-t1q80hntfj"><div class="ldio-nxt5zzdxa1">
        <div></div><div></div><div></div>
        </div></div>
    </div>
 
 <!-- PLANTILLA NOTIFICACIO INICI SESSIO CORRECTE -->
-<div id="login-notify-ok">
+  <div id="login-notify-ok">
         <div class="notifications-container">
             <div class="success">
               <div class="flex">
@@ -219,7 +220,7 @@
               </div>
             </div>
           </div>
-</div>  
+  </div>  
 
 
 
