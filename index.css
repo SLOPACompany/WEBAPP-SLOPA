@@ -6,21 +6,21 @@ html {
 }
 
 
-/* body */
+/* ESTIL APLICAT A TOT EL BODY */
 body {
     display: flex;    
-    flex-direction: column;    /* els elements es disposen de dalt cap abaix */
-    justify-content: space-between;    /* els elements, separats per espais, ocupen tot l'espai disponibles */
-    min-height: 100vh;    /* alçària de la pantalla en navegadors d'escriptori */  
-    min-height: 100svh;    /* per a navegadors on la declaració anterior no és precisa */
+    flex-direction: column;    
+    justify-content: space-between;    
+    min-height: 100vh;     
+    min-height: 100svh;    
     min-height: -webkit-fill-available;    
-    margin: 0px;    /* elimina tots els marges del document */
-    font-family: "Poppins", sans-serif;    /* un tipus de lletra adient per a llocs web */
-    background-color: #d8d8d8;    /* color de fons en format #RRGGBB */
+    margin: 0px;   
+    font-family: "Poppins", sans-serif;   
+    background-color: #d8d8d8;    
 }
 
 
-/* CSS MENU ALUMNAT */
+/* ESTIL PER AL MENU ALUMNAT */
 #menu {
   display: none;
   justify-content: space-around;
@@ -34,18 +34,15 @@ body {
   box-sizing: border-box;
   z-index: 999;
 }
-
 #menu i {
   font-size: 35px; 
   cursor: pointer;
   text-align: center; 
 }
-
 .optionmenu1 {
   text-align: center;
   margin-top: 5px; 
 }
-
 .optionmenu1 p {
   font-size: 13px;
   font-weight: 500; 
@@ -53,7 +50,7 @@ body {
 }
 
 
-/* CSS MENU PROFESORAT */
+/* ESTIL PER AL MENU PROFESORAT */
 #menuprof {
     display: none;
     justify-content: space-around;
@@ -68,21 +65,17 @@ body {
     box-sizing: border-box;
     z-index: 999; 
 }
-
 #menuprof i {
     font-size: 40px; 
     cursor: pointer; 
 }
-
 #exit {
     color: #f83030; 
 }
 
 
-
-/* CSS per a TOTES les seccions */
+/* ESTIL APLICAT A TOTES LES SECCIONS */
 .seccio {
-  
     flex: 1;
     display: flex;
     justify-content: center; 
@@ -91,9 +84,10 @@ body {
 }
 
 
-/* CSS SECCIONS  */
 
-/*SECCIO LOGIN ALUMNAT (Predeterminat)  */
+/* ESTIL PER ELS LOGIN's  */
+
+/* LOGIN ALUMNAT (Predeterminat)  */
 #seccio_0 {
     display: flex;
     background-image: url('resources/fondologin2.jpg');
@@ -103,9 +97,71 @@ body {
     background-size:cover;
 }
 
+.card {
+  width: 240px;
+  height: 500px;
+  padding: 0 15px;
+  font-weight:500;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 12px;
+  background: rgba(0, 0, 0, 0.568);
+  border-radius: 20px;
+}
+.card>* {
+  margin: 0;
+}
+.card__title {
+  font-weight:600;
+  font-size: 27px;
+  color: #ffffff;
+}
+.card__content {
+  font-size: 13px;
+  font-weight:400;
+  line-height: 18px;
+  color: #8f8c8c;
+}
+.card__form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.card__form input {
+  margin-top: 10px;
+  outline: 0;
+  background: rgb(255, 255, 255);
+  box-shadow: transparent 0px 0px 0px 1px inset;
+  padding: 0.6em;
+  border-radius: 14px;
+  border: 2px solid rgb(78, 78, 78);
+  color: rgb(0, 0, 0);
+  
+}
+.card__form button {
+  margin-top: 7px;
+  font-weight:50s0;
+  font-size: 17px;
+  border: 0;
+  background: #249145;
+  color: #fff;
+  padding: 0.68em;
+  border-radius: 14px;
+  font-weight: bold;
+}
+.sign-up:hover {
+  background-color: #24914598;
+}
+#fotologin{
+  width: 300px;
+  height: 200px;
+  
+}
 
-
-/*SECCIO LOGIN PROFESORAT */
+/* LOGIN PROFESORAT */
 #seccio_0_1 {
     display: none;
     background-image: url('resources/fondologin2.jpg');
@@ -115,9 +171,84 @@ body {
     background-size:cover;
 }
 
+.card2 {
+  width: 240px;
+  height: 550px;
+  padding: 0 15px;
+  font-weight:500;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 12px;
+  background: rgba(0, 0, 0, 0.568);
+  border-radius: 20px;
+}
+.card2>* {
+  margin: 0;
+}
+.card2__title {
+  font-weight:600;
+  font-size: 27px;
+  color: #ffffff;
+}
+.card2__content {
+  font-size: 13px;
+  font-weight:400;
+  line-height: 18px;
+  color: #8f8c8c;
+}
+.card2__form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.card2__form input {
+  outline: 0;
+  background: rgb(252, 252, 252);
+  box-shadow: transparent 0px 0px 0px 1px inset;
+  padding: 0.6em;
+  border-radius: 14px;
+  border: 2px solid rgb(78, 78, 78);
+  color: rgb(0, 0, 0);
+}
+.card2__form button {
+  margin-top: 12px;
+  font-weight:500;
+  font-size: 17px;
+  border: 0;
+  background: #249145;
+  color: #fff;
+  padding: 0.68em;
+  border-radius: 14px;
+  font-weight: bold;
+}
+.sign-up:hover {
+  background-color: #24914598;
+}
+#textprofe{
+  font-size: 13px;
+  font-weight:500;
+  line-height: 1px;
+  color: #007db8;
+  text-decoration:underline;
+  cursor: pointer;
+}
+#textalum{
+font-size: 13px;
+  font-weight:500;
+  line-height: 1px;
+  color: #007db8;
+  text-decoration:underline;
+  cursor: pointer;
+}
 
 
-/* SECCIO 1*/
+
+/* ESTIL DE CADA  SECCIO  */
+
+/* SECCIO 1 (INICI)*/
 #seccio_1{
     display: none;
     background-image: url('resources/fondo.png');
@@ -140,7 +271,7 @@ body {
   color: rgb(0, 0, 0);
   font-size: 30px;
   font-weight: bold;
-  margin-right: 20px; 
+  margin-right: 10px; 
 }
 
 .secondary-text {
@@ -149,10 +280,7 @@ body {
 }
 
 
-
-
-
-/* SECCIO 2 */
+/* SECCIO 2 (NORMAS) */
 #seccio_2 {
   display: none;
   top: 100%;
@@ -197,10 +325,15 @@ body {
 }
 
 
-
-/* SECCIO 3 */
+/* SECCIO 3 (RANKING) */
 #seccio_3{
-    display: none;
+  display: none;
+    margin: 10px;
+    margin-bottom: 100px;
+}
+#myChart {
+  max-width: 100%; 
+  height: auto;
 }
 
 
@@ -210,138 +343,83 @@ body {
 }
 
 
+/* SECCIO 5 AVALUACIO */
+#seccio_5{
+  display:none;
+  flex-direction: column;
+  justify-content: center;  
+  align-items: center;
+  
+}
 
-/* CSS LOGIN ALUMNAT  */
-.card {
-    width: 240px;
-    height: 500px;
-    padding: 0 15px;
-    font-weight:500;
-    text-align: center;
+#classeeval{
+    display: flex;
+}  
+
+.parrafo {
+    
+    display: flex;
+    width: 100%; 
+    height: 100%;
+    box-sizing:border-box; 
+   
+}
+
+.section {
+    
+    background-color: #ffffff;
+    display: flex;
+    padding: 30px;
+    width: 90%;
+    margin: 20px;
+    border-radius: 30px;
+    border: 3px solid #000000; 
+   
+}
+
+.marcador{
+    display:flex;
+    align-items: center;
+}
+
+.number-control {
+    display: flex;
+    align-items:center;
+    justify-content:center;
+  }
+  
+  .number-left::before,
+  .number-right::after {
+    background-color: #333333;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
-    gap: 12px;
-    background: rgba(0, 0, 0, 0.568);
-    border-radius: 20px;
-}
-.card>* {
-    margin: 0;
-}
-.card__title {
-    font-weight:600;
-    font-size: 27px;
-    color: #ffffff;
-}
-.card__content {
-    font-size: 13px;
-    font-weight:400;
-    line-height: 18px;
-    color: #8f8c8c;
-}
-.card__form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-.card__form input {
-    margin-top: 10px;
-    outline: 0;
-    background: rgb(255, 255, 255);
-    box-shadow: transparent 0px 0px 0px 1px inset;
-    padding: 0.6em;
-    border-radius: 14px;
-    border: 2px solid rgb(78, 78, 78);
-    color: rgb(0, 0, 0);
-    
-}
-.card__form button {
-    margin-top: 7px;
-    font-weight:50s0;
-    font-size: 17px;
-    border: 0;
-    background: #249145;
-    color: #fff;
-    padding: 0.68em;
-    border-radius: 14px;
-    font-weight: bold;
-}
-.sign-up:hover {
-    background-color: #24914598;
-}
-#fotologin{
-    width: 300px;
-    height: 200px;
-    
-}
-
-
-/* CSS LOGIN PROFESSORAT  */
-.card2 {
-    width: 240px;
-    height: 500px;
-    padding: 0 15px;
-    font-weight:500;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 12px;
-    background: rgba(0, 0, 0, 0.568);
-    border-radius: 20px;
-}
-.card2>* {
-    margin: 0;
-}
-.card2__title {
-    font-weight:600;
-    font-size: 27px;
-    color: #ffffff;
-}
-.card2__content {
-    font-size: 13px;
-    font-weight:400;
-    line-height: 18px;
-    color: #8f8c8c;
-}
-.card2__form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-.card2__form input {
-    outline: 0;
-    background: rgb(252, 252, 252);
-    box-shadow: transparent 0px 0px 0px 1px inset;
-    padding: 0.6em;
-    border-radius: 14px;
-    border: 2px solid rgb(78, 78, 78);
-    color: rgb(0, 0, 0);
-}
-.card2__form button {
-    margin-top: 12px;
-    font-weight:500;
-    font-size: 17px;
-    border: 0;
-    background: #249145;
-    color: #fff;
-    padding: 0.68em;
-    border-radius: 14px;
-    font-weight: bold;
-}
-.sign-up:hover {
-    background-color: #24914598;
-}
-#textprofe{
-    font-size: 13px;
-    font-weight:500;
-    line-height: 1px;
-    color: #007db8;
-    text-decoration:underline;
+    width: 30px;
+    color: rgb(255, 255, 255);
+    transition: background-color 0.3s;
     cursor: pointer;
-}
+  }
+  
+  .number-left::before {
+    content: "-";
+  }
+  
+  .number-right::after {
+    content: "+";
+  }
+  
+  .number-quantity {
+    padding: 0.25rem;
+    border: 0;
+    width: 50px;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+  }
+  
+  .number-left:hover::before,
+  .number-right:hover::after {
+    background-color: #666666;
+  }
 
 
 /* PLANTILLA NOTFICACIO LOGIN CORRECTE */
@@ -438,7 +516,7 @@ body {
     border: none
   }
 
-  /* PLANTILLA NOTFICACIO LOGIN INCORRECTE */
+/* PLANTILLA NOTFICACIO LOGIN INCORRECTE */
 #login-notify-error{
   display: none;
   position: fixed;
@@ -451,7 +529,6 @@ body {
   align-items: center;
 
 }
-
 
 .notifications-container2{
     width: 320px;
@@ -595,85 +672,3 @@ body {
     transform-origin: 0 0; 
   }
   .ldio-nxt5zzdxa1 div { box-sizing: content-box; }
-
-  
-
-  
-/* SECCIO PROFES */
-#seccio_5{
-  display: none;
-  flex-direction: column;
-  justify-content: center;  
-  align-items: center;
-  
-}
-
-#classeeval{
-    display: flex;
-}  
-
-.parrafo {
-    
-    display: flex;
-    width: 100%; 
-    height: 100%;
-    box-sizing:border-box; 
-   
-}
-
-.section {
-    
-    background-color: #ffffff;
-    display: flex;
-    padding: 30px;
-    width: 90%;
-    margin: 20px;
-    border-radius: 30px;
-    border: 3px solid #000000; 
-   
-}
-
-.marcador{
-    display:flex;
-    align-items: center;
-}
-
-.number-control {
-    display: flex;
-    align-items:center;
-    justify-content:center;
-  }
-  
-  .number-left::before,
-  .number-right::after {
-    background-color: #333333;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 30px;
-    color: rgb(255, 255, 255);
-    transition: background-color 0.3s;
-    cursor: pointer;
-  }
-  
-  .number-left::before {
-    content: "-";
-  }
-  
-  .number-right::after {
-    content: "+";
-  }
-  
-  .number-quantity {
-    padding: 0.25rem;
-    border: 0;
-    width: 50px;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
-  }
-  
-  .number-left:hover::before,
-  .number-right:hover::after {
-    background-color: #666666;
-  }
-  

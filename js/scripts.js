@@ -6,7 +6,8 @@ let codiclasse;
 let classe
 let clase_trobada = false;
 
-//SCRIPT AL CARREGAR PAGINA  (despareixer el loader carregar pagina & Consultar tota la database + assignacio a variable)
+
+//FUNCIO AL CARREGAR PAGINA  (despareixer el loader carregar pagina & Consultar tota la database + assignacio a variable)
 window.onload=function(){
     let consulta2 = scriptURL + "?query=select";
     fetch(consulta2)
@@ -22,7 +23,7 @@ window.onload=function(){
      });
 }
 
-
+//FUNCIONS LOGIN's
 
 //FUNCIO LOGIN SCRIPT ALUMNAT (predeterminat)
 function inici_sessio() {
@@ -45,12 +46,10 @@ function inici_sessio() {
     }
 }  
 
-
-//FUNCIO INDICAR TEXT CLASSE
+//FUNCIO INDICAR QUINA CLASSE ES EN TEXT DE BENVINGUDA
 function classe_text(){
     document.getElementById("textclasse").innerText = classe;
 }
-
 
 //FUNCIO D'USUARI VERIFICAT
 function inicia_sessio() {
@@ -76,30 +75,7 @@ function eliminarText() {
     document.getElementById("introcontraprof").value = "";
 }
 
-
-//FUNCIO CANVI DE PAGINES EN MENU
-function canvia_seccio(num_boto) {
-    const menu = document.getElementById("menu");
-    const num_botons = menu.children.length; 
-    for (let i = 1; i < num_botons; i++) {
-        let boto = document.getElementById("boto_" + i);
-        let seccio = document.getElementById("seccio_" + i);
-        if (i == num_boto) {
-            boto.style.color = "#8b8b8b"; 
-            boto.style.backgroundColor =""; 
-            seccio.style.display = "flex"; 
-        } else {
-            boto.style.color = "white"; 
-            boto.style.backgroundColor = "";
-            seccio.style.display = "none"; 
-        }
-    }
-}
-
-
-
-//FUNCIOS PER A PROFESORAT:
-//FUNCIO CANVI LOGIN
+//FUNCIO CANVIAR DE LOGIN DE ALUMNAT A PROFESORAT
 function canviloginprof(){
     document.getElementById("loading").style.display = "flex";
     document.getElementById("seccio_0").style.display = "none";
@@ -107,6 +83,13 @@ function canviloginprof(){
     document.getElementById("loading").style.display = "none";
 } 
 
+//FUNCIO CANVIAR DE LOGIN DE PROFESORAT A ALUMNAT
+function canviloginalum(){
+    document.getElementById("loading").style.display = "flex";
+    document.getElementById("seccio_0_1").style.display = "none";
+    document.getElementById("seccio_0").style.display = "flex";   
+    document.getElementById("loading").style.display = "none";
+}
 
 //FUNCIO INICAR SESSIO
 function inicia_ses_professorat() {
@@ -145,3 +128,37 @@ function inicia_sessio_professorat(){
 function sorirbtnoti(){
     document.getElementById("login-notify-error").style.display = "none";
 }
+
+//FUNCIONS MENU's
+
+//FUNCIO CANVI DE PAGINES EN MENU
+function canvia_seccio(num_boto) {
+    document.getElementById("seccio_5").style.display = "none";
+    const menu = document.getElementById("menu");
+    const num_botons = menu.children.length; 
+    for (let i = 1; i < num_botons; i++) {
+        let boto = document.getElementById("boto_" + i);
+        let seccio = document.getElementById("seccio_" + i);
+        if (i == num_boto) {
+            boto.style.color = "#8b8b8b"; 
+            boto.style.backgroundColor =""; 
+            seccio.style.display = "flex"; 
+        } else {
+            boto.style.color = "white"; 
+            boto.style.backgroundColor = "";
+            seccio.style.display = "none"; 
+        }
+    }
+}
+// FUNCIO PER LA UNICA SECCIO DE EVALUACIO
+function canvia_secio() {
+    document.getElementById("seccio_0").style.display = "none";
+    document.getElementById("seccio_1").style.display = "none";
+    document.getElementById("seccio_2").style.display = "none";
+    document.getElementById("seccio_3").style.display = "none";
+    document.getElementById("seccio_4").style.display = "none";
+    document.getElementById("seccio_5").style.display = "flex";
+
+}
+
+
