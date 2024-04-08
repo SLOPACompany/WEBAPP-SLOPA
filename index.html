@@ -55,7 +55,7 @@
         <p>Ranking</p>
         </div>
         <div class="optionmenu1">
-        <i id="boto_1" class="fa-solid fa-list" onclick=""></i>
+        <i id="boto_1" class="fa-solid fa-list" onclick="canvia_secio()"></i>
         <p>Avaluació</p>
         </div>
         <div class="optionmenu1">
@@ -77,13 +77,13 @@
                 <p id="textprofe" onclick="canviloginprof()">Ets Professor?</p>
         </div>
         </div>
-    <script>
-      document.getElementById("introcodi").addEventListener("keydown", function(event) {
-          if (event.key === "Enter") {
+        <script>
+         document.getElementById("introcodi").addEventListener("keydown", function(event) {
+             if (event.key === "Enter") {
              inici_sessio();
-          }
-          });
-    </script>
+             }
+             });
+        </script>
   </div>
 
         
@@ -98,25 +98,24 @@
                  <input placeholder="Codi de Classe" type="number" id="introcodiprof">
                  <input placeholder="Contrasenya" type="password" id="introcontraprof">
                 <button class="sign-up" onclick="inicia_sessio_professorat()">Iniciar Sessió</button>
-            </div>
-             </div>
-        <script>
-            document.getElementById("introcontraprof").addEventListener("keydown", function(event) {
-// Verificar si la tecla presionada es Enter
-              if (event.key === "Enter") {
-// Executar la funcio inici sessio
-            inicia_sessio_professorat();
-              }
-            });
-            </script>
+                <p id="textalum" onclick="canviloginalum()">Ets Alumnat?</p>
+                </div>
+                </div>
+                <script>
+                document.getElementById("introcontraprof").addEventListener("keydown", function(event) {
+                  if (event.key === "Enter") {
+                inicia_sessio_professorat();
+                  }
+                  });
+               </script>
     </div>
 
     
-<!-- SECCIO 1 -->
+<!-- SECCIO 1 (INICI)-->
     <div id="seccio_1" class="seccio">
           <div class="welcome-container">
-            <div class="welcome-text">👋 Benvingut,   </div>
-            <div id="textclasse"  class="secondary-text">(classe)</div>
+          <div class="welcome-text">👋 Benvingut,   </div>
+          <div id="textclasse"  class="secondary-text">(classe)</div>
         </div>
     </div>
          
@@ -138,40 +137,39 @@
               </div>
   </div>
 
-<!-- SECCIO 3 (Ranking) -->
+<!-- SECCIO 3 (RANKING) -->
   <div id="seccio_3" class="seccio">
-
           <canvas id="myChart"></canvas>
-
- <script>
-  var classes_grafic = ['1rA', '1rB', '1rC', '2nA', '2nB', '2nC', '3rA', '3rB', '3rC', '4rA', '4rB', '4rC'];
-  var puntuacio_grafic = [150, 90, 45, 100, 100, 134, 154, 100, 105, 100, 146, 143];
-
-  var ctx = document.getElementById('myChart').getContext('2d');
-  var myChart = new Chart(ctx, {
-    type: 'horizontalBar',
-    data: {
-      labels: classes_grafic,
-      datasets: [{
-        data: puntuacio_grafic,
-        backgroundColor: '#72b01d',
-        borderColor: '#72b01d',
-        borderWidth: 5,
-        label: "Puntuació", 
-      }]
-    },
-    options: {
-      scales: {
-        x: {
-          beginAtZero: true,
-        },
-        y: {
-          beginAtZero: true
-        }
-      }
-    }
-  });
- </script>
+          <script>
+            var classes_grafic = ['1rA', '1rB', '1rC', '2nA', '2nB', '2nC', '3rA', '3rB', '3rC', '4rA', '4rB', '4rC'];
+            var puntuacio_grafic = [150, 90, 45, 100, 100, 134, 154, 100, 105, 100, 146, 143];
+          
+            var ctx = document.getElementById('myChart').getContext('2d');
+            var myChart = new Chart(ctx, {
+              type: 'horizontalBar',
+              data: {
+                labels: classes_grafic,
+                datasets: [{
+                  data: puntuacio_grafic,
+                  backgroundColor: '#72b01d',
+                  borderColor: '#72b01d',
+                  borderWidth: 5,
+                  label: "Puntuació", 
+                }]
+              },
+              options: {
+                scales: {
+                  x: {
+                    beginAtZero: true,
+                  },
+                  y: {
+                    beginAtZero: true
+                  }
+                },
+                responsive: true,
+              }
+            });
+          </script>
   </div>
 
 
@@ -180,23 +178,26 @@
             
 </div>
 
-<!-- SECCIO PROFES -->
+<!-- SECCIO 5 AVALUACIO -->
 <div id="seccio_5" class="seccio">
-         
-</div>
-
-       
-
+        
+  <div id="title">
+    <H1>AVALUACIÓ</H1>
+    </div>
+  <div id="classeeval">
+    <p>CLASSE:</p>
+  </div> 
+  </div>
 
 <!-- PLANTILLAS ADAPTADES -->
 <!-- PLANTILLA LOADER -->
   <div id="loading" class="seccio">
     <div class="loadingio-spinner-pulse-t1q80hntfj"><div class="ldio-nxt5zzdxa1">
        <div></div><div></div><div></div>
-       </div></div>
+        </div></div>
    </div>
 
-<!-- PLANTILLA NOTIFICACIO INICI SESSIO CORRECTE -->
+<!-- PLANTILLA NOTIFICACIO INICI SESSIO CORRECTE  ALUMNAT-->
   <div id="login-notify-ok">
         <div class="notifications-container">
             <div class="success">
@@ -221,8 +222,6 @@
             </div>
           </div>
   </div>  
-
-
 
 <!-- PLANTILLA NOTIFICACIO INICI SESSIO INCORRECTE -->
 <div id="login-notify-error">
@@ -251,6 +250,7 @@
     </div>
 </div>  
 
+<!-- PLANTILLA NOTIFICACIO INICI SESSIO CORRECTE PROFESORAT -->
 <div id="login-notify-ok-profes">
 <div class="notifications-container">
   <div class="success">
