@@ -98,11 +98,11 @@ function inicia_ses_professorat() {
     document.getElementById("seccio_0_1").style.display = "none";
     document.getElementById("menu").style.display = "none";
     document.getElementById("menuprof").style.display = "flex";
-    document.getElementById("seccio_5").style.display = "none";
+    document.getElementById("seccio_5").style.display = "flex";
     document.getElementById("login-notify-ok-profes").style.display = "none";
     
 }
-
+ 
 
 //LOGIN CLASSE I CONTRASENYA PROFESORAT
 

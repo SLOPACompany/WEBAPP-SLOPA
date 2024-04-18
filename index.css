@@ -554,16 +554,19 @@ font-size: 13px;
     padding: 1rem;
     border-radius: 0.375rem;
     background-color: rgb(240 253 244);
+    
   }
   
   .failed-svg {
     color: rgb(204, 52, 52);
     width: 1.25rem;
     height: 1.25rem;
+    
   }
   
   .failed-prompt-wrap {
     margin-left: 0.75rem;
+    
   }
   
   .failed-prompt-heading {
@@ -583,7 +586,7 @@ font-size: 13px;
   .failed-button-container {
    
     justify-content: right;
-    margin-right:55px ;
+    margin-right:35px ;
     display: flex;
     margin-top: 0.875rem;
     margin-bottom: -0.375rem;
