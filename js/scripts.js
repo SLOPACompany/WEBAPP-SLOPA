@@ -105,24 +105,26 @@ function inicia_ses_professorat() {
 
 
 //LOGIN CLASSE I CONTRASENYA PROFESORAT
-function inicia_sessio_professorat(){
-    document.getElementById("loading").style.display = "flex";
+
+function inicia_sessio_professorat() {
+    document.getElementById("loading").style.display = "flex"; 
     codiclasse = document.getElementById("introcodiprof").value; 
     contrasenya = document.getElementById("introcontraprof").value;
-    let consulta = scriptURL + "?query=select&where=codiclasse&is=" + codiclasse + "&and=contrasenya_profes&equal=" + contrasenya;
-    fetch(consulta)
-        .then((resposta) => resposta.json())
-        .then((resposta) => {
-            if (resposta.length === 0) { 
-                document.getElementById("loading").style.display = "none";
+    for (let i = 0; i < basedades.length; i++) {
+        if (basedades[i]["codiclasse"]==codiclasse && basedades[i]["contrasenya_profes"]==contrasenya) { 
+            classe=(basedades[i]["classe"]);  
+            clase_trobada = true;
+        }
+    }
+    if (clase_trobada == true) {
+        document.getElementById("loading").style.display = "none";
+        document.getElementById("login-notify-ok-profes").style.display = "flex";
+    } else {
+        document.getElementById("loading").style.display = "none";
                 document.getElementById("login-notify-error").style.display = "flex";
                 eliminarText();
-            } else { 
-                document.getElementById("loading").style.display = "none";
-                document.getElementById("login-notify-ok-profes").style.display = "flex";
-            }
-        });
-} 
+    }
+}  
 
 //FUNCIO  BOTO NOTIFI ERROR
 function sorirbtnoti(){
