@@ -280,6 +280,28 @@ font-size: 13px;
 }
 
 
+.contenedorinteractiu{
+  position: relative;
+  margin:20%;
+}
+
+.imagen {
+  width: 200px;
+  height: 200px;
+  margin: 10px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.desplegableblau {
+  display: none;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+}
+
+
+
 /* SECCIO 2 (NORMAS) */
 #seccio_2 {
   display: none;
@@ -340,6 +362,50 @@ font-size: 13px;
 /* SECCIO 4 */
 #seccio_4{
     display: none;
+    flex-direction: column;
+    
+}
+
+.txtprofile-container{
+  background-color: #1088f849; 
+  padding: 20px; 
+  border-radius : 20px;
+  width: 70%;
+}
+.profile-container {
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+}
+
+.profile-text, .profilesecondary-text {
+  color: rgb(0, 0, 0);
+  font-size: 30px;
+  font-weight: bold;
+  margin-right: 10px; 
+}
+
+.profilesecondary-text {
+  color: rgb(0, 0, 0);
+    font-weight: 700;
+}
+
+.profile-text-puntuacio-container {
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  margin-top: 20px;
+}
+
+.text-punts, .textpuntsprofile {
+  color: rgb(0, 0, 0);
+  font-size: 30px;
+  font-weight: bold;
+  margin-right: 10px; 
+}
+.profilesecondary2-text {
+  color: rgb(0, 0, 0);
+    font-weight: 700;
 }
 
 

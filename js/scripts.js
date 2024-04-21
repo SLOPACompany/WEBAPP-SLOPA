@@ -49,7 +49,9 @@ function inici_sessio() {
 //FUNCIO INDICAR QUINA CLASSE ES EN TEXT DE BENVINGUDA
 function classe_text(){
     document.getElementById("textclasse").innerText = classe;
+    document.getElementById("textclasseprofile").innerText = classe;
 }
+
 
 //FUNCIO D'USUARI VERIFICAT
 function inicia_sessio() {
@@ -135,6 +137,7 @@ function sorirbtnoti(){
 
 //FUNCIO CANVI DE PAGINES EN MENU
 function canvia_seccio(num_boto) {
+    classe_text();
     document.getElementById("seccio_5").style.display = "none";
     const menu = document.getElementById("menu");
     const num_botons = menu.children.length; 
@@ -162,5 +165,4 @@ function canvia_secio() {
     document.getElementById("seccio_5").style.display = "flex";
 
 }
-
 
