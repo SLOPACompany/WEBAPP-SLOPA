@@ -280,6 +280,52 @@ font-size: 13px;
 }
 
 
+.contenedorinteractiu {
+  display: flex;
+  margin-top: 100px;
+}
+
+
+.carta-box {
+  width: 200px;
+  height: 250px;
+  position: relative;
+  perspective: 1000px;
+  margin: 70px; 
+}
+
+.carta-box:hover .carta {
+  transform: rotateY(180deg);
+}
+
+.carta {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: all 0.5s linear;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cara {
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.cara.detras {
+  transform: rotateY(180deg);
+}
+
+@media screen and (max-width: 768px) { /* Cambios para dispositivos móviles */
+  .contenedorinteractiu {
+   
+    flex-direction: column;
+  }
+}
+
+
+
 /* SECCIO 2 (NORMAS) */
 #seccio_2 {
   display: none;
@@ -330,16 +376,63 @@ font-size: 13px;
   display: none;
     margin: 10px;
     margin-bottom: 100px;
+    width: -webkit-fill-available;
+    height: -webkit-fill-available;
 }
 #myChart {
-  max-width: 100%; 
-  height: auto;
+  width: -webkit-fill-available;
+  height: -webkit-fill-available;
+  
 }
 
 
 /* SECCIO 4 */
 #seccio_4{
     display: none;
+    flex-direction: column;
+    
+}
+
+.txtprofile-container{
+  background-color: #1088f849; 
+  padding: 20px; 
+  border-radius : 20px;
+  width: 70%;
+}
+.profile-container {
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+}
+
+.profile-text, .profilesecondary-text {
+  color: rgb(0, 0, 0);
+  font-size: 30px;
+  font-weight: bold;
+  margin-right: 10px; 
+}
+
+.profilesecondary-text {
+  color: rgb(0, 0, 0);
+    font-weight: 700;
+}
+
+.profile-text-puntuacio-container {
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  margin-top: 20px;
+}
+
+.text-punts, .textpuntsprofile {
+  color: rgb(0, 0, 0);
+  font-size: 30px;
+  font-weight: bold;
+  margin-right: 10px; 
+}
+.profilesecondary2-text {
+  color: rgb(0, 0, 0);
+    font-weight: 700;
 }
 
 

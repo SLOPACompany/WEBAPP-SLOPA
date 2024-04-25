@@ -22,6 +22,10 @@
 
 <!-- MENU ALUMNAT -->
   <div id="menu"> 
+    <div class="optionmenu1"> 
+      <i id="boto_1" class="fa-solid fa-house" onclick="canvia_seccio(1)"></i>
+      <p>Inici</p>
+    </div>
       <div class="optionmenu1">          
         <i id="boto_2" class="fa-solid fa-clipboard-list" onclick="canvia_seccio(2)"></i>
         <p >Normes</p>
@@ -30,14 +34,8 @@
         <i id="boto_3" class="fa-solid fa-chart-line" onclick="canvia_seccio(3)"></i>
         <p>Ranking</p>
       </div>
-      <div class="optionmenu1"> 
-        <i id="boto_1" class="fa-solid fa-house" onclick="canvia_seccio(1)"></i>
-        <p>Inici</p>
-      </div>
-      <div class="optionmenu1"> 
-        <i id="boto_4" class="fa-solid fa-id-card" onclick="canvia_seccio(4)"></i>
-        <p>Perfil</p>
-      </div>
+      
+      
       <div class="optionmenu1"> 
         <i id="exit" class="fa-solid fa-right-from-bracket" onclick="tanca_sessio()"></i>
         <p>Sortir</p>
@@ -117,6 +115,47 @@
           <div class="welcome-text">👋 Benvingut,   </div>
           <div id="textclasse"  class="secondary-text">(classe)</div>
         </div>
+
+        <div class="contenedorinteractiu">
+          
+
+          <div class="carta-box">
+            <div class="carta">    
+              <div class="cara">
+                <img src="resources/blau.png" width="300" height="auto">
+              </div>
+              <div class="cara detras">
+                <img src="resources/blaunormes.png" width="300" height="auto">
+              </div>    
+            </div>
+          </div>
+
+          <div class="carta-box">
+            <div class="carta">    
+              <div class="cara">
+                <img src="resources/groc.png" width="300" height="auto">
+              </div>
+              <div class="cara detras">
+                <img src="resources/grocnormes.png" width="300" height="auto">
+              </div>    
+            </div>
+          </div>
+
+
+          <div class="carta-box">
+            <div class="carta">    
+              <div class="cara">
+                <img src="resources/negre.png" width="300" height="auto">
+              </div>
+              <div class="cara detras">
+                <img src="resources/negrenormes.png" width="300" height="auto">
+              </div>    
+            </div>
+          </div>
+
+            
+        </div>
+      </div>
     </div>
          
 <!-- SECCIO 2 (NORMAS) -->
@@ -142,7 +181,7 @@
           <canvas id="myChart"></canvas>
           <script>
             var classes_grafic = ['1rA', '1rB', '1rC', '2nA', '2nB', '2nC', '3rA', '3rB', '3rC', '4rA', '4rB', '4rC'];
-            var puntuacio_grafic = [150, 90, 45, 100, 100, 134, 154, 100, 105, 100, 146, 143];
+            var puntuacio_grafic = [100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100];
           
             var ctx = document.getElementById('myChart').getContext('2d');
             var myChart = new Chart(ctx, {
@@ -167,6 +206,7 @@
                   }
                 },
                 responsive: true,
+                aspectRatio: 1.5 
               }
             });
           </script>
@@ -175,7 +215,18 @@
 
 <!-- SECCIO 4 -->
 <div id="seccio_4" class="seccio">
-            
+
+  <div class="txtprofile-container">
+    <div class="profile-container">
+      <div class="profile-text">Classe:</div>
+      <div id="textclasseprofile"  class="profilesecondary-text">(classe)</div>
+    </div>
+  <div class="profile-text-puntuacio-container">
+    <div class="text-punts">Puntuació:</div>
+    <div id="textpuntsprofile"  class="profilesecondary2-text">(punts)</div>
+  </div>
+  </div>
+  
 </div>
 
 <!-- SECCIO 5 AVALUACIO -->
@@ -184,9 +235,13 @@
   <div id="title">
     <H1>AVALUACIÓ</H1>
     </div>
-  <div id="classeeval">
-    <p>CLASSE:</p>
-  </div> 
+  
+    <div class="welcome-container">
+      <div class="welcome-text">👋 Benvingut,   </div>
+      <div id="textclasseprofile"  class="secondary-text">(classe)</div>
+    </div>
+
+
   </div>
 
 <!-- PLANTILLAS ADAPTADES -->
