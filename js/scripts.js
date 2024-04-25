@@ -128,6 +128,14 @@ function inicia_sessio_professorat() {
     }
 }  
 
+
+
+//FUNCIO INDICAR QUINA CLASSE ES EN TEXT 
+function classe_text_prof(){
+   
+}
+
+
 //FUNCIO  BOTO NOTIFI ERROR
 function sorirbtnoti(){
     document.getElementById("login-notify-error").style.display = "none";
