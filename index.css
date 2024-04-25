@@ -376,10 +376,13 @@ font-size: 13px;
   display: none;
     margin: 10px;
     margin-bottom: 100px;
+    width: -webkit-fill-available;
+    height: -webkit-fill-available;
 }
 #myChart {
-  max-width: 100%; 
-  height: auto;
+  width: -webkit-fill-available;
+  height: -webkit-fill-available;
+  
 }
 
 
