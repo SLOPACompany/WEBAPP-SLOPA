@@ -119,31 +119,42 @@
         </div>
 
         <div class="contenedorinteractiu">
-          <div id="infotext">ⓘ Clica el contenidor per descobrir on va cada cosa.</div>
-          <img src="resources/blau.png" alt="" class="imagen" id="blau" onclick="mostrardesplegableblau('blau')">
+          
 
-          
-        <script>
-          // Función para mostrar/ocultar el desplegable
-          function mostrardesplegableblau() {
-              var desplegable = document.getElementById("desplegableblau");
-              if (desplegable.style.display === "none") {
-                  desplegable.style.display = "block";
-              } else {
-                  desplegable.style.display = "none";
-              }
-          }
-      </script>
-          <img src="resources/groc.png" alt="" class="imagen" id="groc" onclick="mostrarDesplegable('groc')">
-          <img src="resources/negre.png" alt="" class="imagen" id="negre" onclick="mostrarDesplegable('negre')">
-          
-          <div id="desplegableblau" class="desplegableblau">
-            Paper de diari.
-            Cartons de caixes i embalatges.
-            Fulles i llibretes usades.
-            Bosses de paper.
-            Paper de regal.
-        </div>
+          <div class="carta-box">
+            <div class="carta">    
+              <div class="cara">
+                <img src="resources/blau.png" width="300" height="auto">
+              </div>
+              <div class="cara detras">
+                <img src="resources/blaunormes.png" width="300" height="auto">
+              </div>    
+            </div>
+          </div>
+
+          <div class="carta-box">
+            <div class="carta">    
+              <div class="cara">
+                <img src="resources/groc.png" width="300" height="auto">
+              </div>
+              <div class="cara detras">
+                <img src="resources/grocnormes.png" width="300" height="auto">
+              </div>    
+            </div>
+          </div>
+
+
+          <div class="carta-box">
+            <div class="carta">    
+              <div class="cara">
+                <img src="resources/negre.png" width="300" height="auto">
+              </div>
+              <div class="cara detras">
+                <img src="resources/negrenormes.png" width="300" height="auto">
+              </div>    
+            </div>
+          </div>
+
             
         </div>
       </div>
