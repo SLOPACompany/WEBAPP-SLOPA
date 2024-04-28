@@ -267,6 +267,7 @@ font-size: 13px;
     left: 40px; 
 }
 
+
 .welcome-text, .secondary-text {
   color: rgb(0, 0, 0);
   font-size: 30px;
@@ -282,7 +283,6 @@ font-size: 13px;
 
 .contenedorinteractiu {
   display: flex;
-  margin-top: 100px;
 }
 
 
@@ -317,13 +317,13 @@ font-size: 13px;
   transform: rotateY(180deg);
 }
 
-@media screen and (max-width: 768px) { /* Cambios para dispositivos móviles */
-  .contenedorinteractiu {
-   
-    flex-direction: column;
-  }
-}
+@media screen and (max-width: 768px) {
+    .contenedorinteractiu {
+        flex-direction: column;
+        margin-top: 100px;
+    }
 
+}
 
 
 /* SECCIO 2 (NORMAS) */
