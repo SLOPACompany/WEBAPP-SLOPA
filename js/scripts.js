@@ -5,7 +5,23 @@ let validat = false;
 let codiclasse;
 let classe
 let clase_trobada = false;
-
+let basedades3 = [
+    {"puntuacio": 100},
+    {"puntuacio": 100},
+    {"puntuacio": 100},
+    {"puntuacio": 100},
+    {"puntuacio": 100},
+    {"puntuacio": 100},
+    {"puntuacio": 100},
+    {"puntuacio": 100},
+    {"puntuacio": 100},
+    {"puntuacio": 100},
+    {"puntuacio": 100},
+    {"puntuacio": 100},
+    {"puntuacio": 100},
+    {"puntuacio": 100},
+    {"puntuacio": 100},
+]
 
 //FUNCIO AL CARREGAR PAGINA  (despareixer el loader carregar pagina & Consultar tota la database + assignacio a variable)
 window.onload=function(){
@@ -26,6 +42,7 @@ window.onload=function(){
 }
 
 //FUNCIONS LOGIN's
+
 
 //FUNCIO LOGIN SCRIPT ALUMNAT (predeterminat)
 function inici_sessio() {
