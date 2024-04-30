@@ -18,9 +18,11 @@ window.onload=function(){
          basedades = data;
          $('#loading').fadeOut();
         })
+        
      .catch((error) => {
          console.error('Error al fer la consulta:', error);
      });
+
 }
 
 //FUNCIONS LOGIN's
