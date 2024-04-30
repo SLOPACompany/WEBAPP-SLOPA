@@ -180,7 +180,7 @@
           <canvas id="myChart"></canvas>
           <script>
             var classes_grafic = ['1rA', '1rB', '1rC', '2nA', '2nB', '2nC', '3rA', '3rB', '3rC', '4rA', '4rB', '4rC'];
-            var puntuacio_grafic = [100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100];
+            var puntuacio_grafic = [(basedades3[1]["puntuacio"]),(basedades3[2]["puntuacio"]),(basedades3[3]["puntuacio"]),(basedades3[4]["puntuacio"]), (basedades3[5]["puntuacio"]),(basedades3[6]["puntuacio"]),(basedades3[7]["puntuacio"]),(basedades3[8]["puntuacio"]),(basedades3[9]["puntuacio"]), (basedades3[10]["puntuacio"]),(basedades3[11]["puntuacio"]),(basedades3[12]["puntuacio"]),0];
           
             var ctx = document.getElementById('myChart').getContext('2d');
             var myChart = new Chart(ctx, {
@@ -196,17 +196,16 @@
                 }]
               },
               options: {
-                scales: {
-                  x: {
-                    beginAtZero: true,
-                  },
-                  y: {
-                    beginAtZero: true
-                  }
-                },
-                responsive: true,
-                aspectRatio: 1.5 
-              }
+  scales: {
+    x: {
+      suggestedMin: 0,
+      suggestedMax: 100,
+    },
+  },
+  responsive: true,
+  aspectRatio: 1.5 
+}
+
             });
           </script>
   </div>
