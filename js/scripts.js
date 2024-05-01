@@ -5,6 +5,7 @@ let validat = false;
 let codiclasse;
 let classe
 let clase_trobada = false;
+let cantidad = 0;
 let basedades3 = [
     {"puntuacio": 100},
     {"puntuacio": 100},
@@ -132,20 +133,27 @@ function inicia_sessio_professorat() {
     codiclasse = document.getElementById("introcodiprof").value; 
     contrasenya = document.getElementById("introcontraprof").value;
     for (let i = 0; i < basedades.length; i++) {
-        if (basedades[i]["codiclasse"]==codiclasse && basedades[i]["contrasenya_profes"]==contrasenya) { 
-            classe=(basedades[i]["classe"]);  
+        if (basedades[i]["codiclasse"] == codiclasse && basedades[i]["contrasenya_profes"] == contrasenya) {
+            classe = basedades[i]["classe"];
             clase_trobada = true;
+    
+            // Cambiar el texto dentro del elemento con la clase "textclassaval"
+            const element = document.querySelector('.textclassaval');
+            if (element) {
+                element.textContent = classe; // Cambiar el texto al nombre de la clase
+            }
         }
     }
-    if (clase_trobada == true) {
+    
+    if (clase_trobada) {
         document.getElementById("loading").style.display = "none";
         document.getElementById("login-notify-ok-profes").style.display = "flex";
     } else {
         document.getElementById("loading").style.display = "none";
-                document.getElementById("login-notify-error").style.display = "flex";
-                eliminarText();
+        document.getElementById("login-notify-error").style.display = "flex";
+        eliminarText();
     }
-}  
+}    
 
 
 
@@ -193,3 +201,39 @@ function canvia_secio() {
 
 }
 
+//CONTADOR PUNUTACIO EVALUACIO
+
+document.addEventListener('DOMContentLoaded', function() {
+    const inputCantidad = document.querySelector('.input-cantidad');
+    const btnDisminuir = document.querySelector('.btn-disminuir');
+    const btnAumentar = document.querySelector('.btn-aumentar');
+  
+    
+  
+    function actualizarCantidad() {
+      inputCantidad.value = cantidad;
+      if (cantidad < 0) {
+        inputCantidad.classList.add('numero-negativo');
+      } else {
+        inputCantidad.classList.remove('numero-negativo');
+      }
+      if (cantidad < 0) {
+        inputCantidad.classList.add('numero-negativo');
+      } else if (cantidad > 0) {
+        inputCantidad.classList.add('numero-positivo');
+      }
+    }
+  
+    btnDisminuir.addEventListener('click', function() {
+      cantidad--;
+      actualizarCantidad();
+    });
+  
+    btnAumentar.addEventListener('click', function() {
+      cantidad++;
+      actualizarCantidad();
+    });
+  
+    actualizarCantidad();
+  });
+  
