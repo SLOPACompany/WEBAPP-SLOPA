@@ -180,8 +180,8 @@
           <canvas id="myChart"></canvas>
           <script>
             var classes_grafic = ['1rA', '1rB', '1rC', '2nA', '2nB', '2nC', '3rA', '3rB', '3rC', '4rA', '4rB', '4rC'];
-            var puntuacio_grafic = [(basedades3[1]["puntuacio"]),(basedades3[2]["puntuacio"]),(basedades3[3]["puntuacio"]),(basedades3[4]["puntuacio"]), (basedades3[5]["puntuacio"]),(basedades3[6]["puntuacio"]),(basedades3[7]["puntuacio"]),(basedades3[8]["puntuacio"]),(basedades3[9]["puntuacio"]), (basedades3[10]["puntuacio"]),(basedades3[11]["puntuacio"]),(basedades3[12]["puntuacio"]),0,150];
-          
+            var puntuacio_grafic = [(basedades[1]["puntuacio"]),(basedades[2]["puntuacio"]),(basedades[3]["puntuacio"]),(basedades[4]["puntuacio"]), (basedades[5]["puntuacio"]),(basedades[6]["puntuacio"]),(basedades[7]["puntuacio"]),(basedades[8]["puntuacio"]),(basedades[9]["puntuacio"]), (basedades[10]["puntuacio"]),(basedades[11]["puntuacio"]),(basedades[12]["puntuacio"]),0,150];
+          //AIXO BUSCA ABANS DE TENIR LA BASE DE DADES BUG
             var ctx = document.getElementById('myChart').getContext('2d');
             var myChart = new Chart(ctx, {
               type: 'horizontalBar',
@@ -245,6 +245,7 @@
   <input type="number" class="input-cantidad" value="1">
   <button class="btn-aumentar">+</button>
 </div>
+<button class="actualitzarbtn" onclick="update_puntu()">Actualitzar</button>
 
 </div>
 

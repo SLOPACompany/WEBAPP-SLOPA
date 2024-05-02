@@ -1,30 +1,16 @@
-//VARIABLES 
+
+//VARIABLES  (Declaracions de variables necessaries)
 let basedades;
 let scriptURL = "https://script.google.com/macros/s/AKfycbxeC47xF70GvKHp4sfxZ5nBuX93ln05D6kyP4z_qt5vVEEvDJCZyFRc62oBra3eL-lx/exec"; 
 let validat = false; 
 let codiclasse;
-let classe
+let classe;
 let clase_trobada = false;
 let cantidad = 0;
-let basedades3 = [
-    {"puntuacio": 100},
-    {"puntuacio": 100},
-    {"puntuacio": 100},
-    {"puntuacio": 100},
-    {"puntuacio": 100},
-    {"puntuacio": 100},
-    {"puntuacio": 100},
-    {"puntuacio": 100},
-    {"puntuacio": 100},
-    {"puntuacio": 100},
-    {"puntuacio": 100},
-    {"puntuacio": 100},
-    {"puntuacio": 100},
-    {"puntuacio": 100},
-    {"puntuacio": 100},
-]
+let reg_actual;
 
-//FUNCIO AL CARREGAR PAGINA  (despareixer el loader carregar pagina & Consultar tota la database + assignacio a variable)
+
+//FUNCIO AL CARREGAR LA PAGINA  (despareixer el loader carregar pagina i Baixar tota la database + assignacio a variable)
 window.onload=function(){
     let consulta2 = scriptURL + "?query=select";
     fetch(consulta2)
@@ -42,10 +28,11 @@ window.onload=function(){
 
 }
 
+
 //FUNCIONS LOGIN's
 
 
-//FUNCIO LOGIN SCRIPT ALUMNAT (predeterminat)
+//LOGIN ALUMNAT (login predeterminat)
 function inici_sessio() {
     document.getElementById("loading").style.display = "flex"; 
     codiclasse = document.getElementById("introcodi").value; 
@@ -66,14 +53,35 @@ function inici_sessio() {
     }
 }  
 
-//FUNCIO INDICAR QUINA CLASSE ES EN TEXT DE BENVINGUDA
-function classe_text(){
-    document.getElementById("textclasse").innerText = classe;
-    document.getElementById("textclasseprofile").innerText = classe;
-}
 
+//LOGIN  PROFESORAT (login amb codi de classe + contrasenya de profesorat)
 
-//FUNCIO D'USUARI VERIFICAT
+function inicia_sessio_professorat() {
+    document.getElementById("loading").style.display = "flex"; 
+    codiclasse = document.getElementById("introcodiprof").value; 
+    contrasenya = document.getElementById("introcontraprof").value;
+    for (let i = 0; i < basedades.length; i++) {
+        if (basedades[i]["codiclasse"] == codiclasse && basedades[i]["contrasenya_profes"] == contrasenya) {
+            classe = basedades[i]["classe"];
+            clase_trobada = true;
+            reg_actual = i;
+            const element = document.querySelector('.textclassaval');
+            if (element) {
+                element.textContent = classe; 
+            }
+        }
+    } 
+    if (clase_trobada) {
+        document.getElementById("loading").style.display = "none";
+        document.getElementById("login-notify-ok-profes").style.display = "flex";
+    } else {
+        document.getElementById("loading").style.display = "none";
+        document.getElementById("login-notify-error").style.display = "flex";
+        eliminarText();
+    }
+}    
+
+//FUNCIO D'USUARI VERIFICAT (Un cop validat canviar valor variable + amagar login i mostrar pantalla 1)
 function inicia_sessio() {
     validat = true;
     document.getElementById("login-notify-ok").style.display = "none";
@@ -82,7 +90,7 @@ function inicia_sessio() {
     canvia_seccio(1); 
 }
 
-//FUNCIO TANCAR SESSIO USUARI
+//FUNCIO TANCAR SESSIO USUARI (Canviar el valor de la variable i refrescar la pagina)
 function tanca_sessio() {
     if (validat) {
         validat = false; 
@@ -90,14 +98,14 @@ function tanca_sessio() {
     }
 }
 
-//FUNCIO PER TREURE TOTS ELS TEXTOS DEL INPUT
+//FUNCIO PER TREURE TOTS ELS TEXTOS DEL INPUT (Substitueix els valors per a res per fer la funcio de netejar els inputs)
 function eliminarText() {
     document.getElementById("introcodi").value = "";
     document.getElementById("introcodiprof").value = "";
     document.getElementById("introcontraprof").value = "";
 }
 
-//FUNCIO CANVIAR DE LOGIN DE ALUMNAT A PROFESORAT
+//FUNCIO CANVIAR DE LOGIN DE ALUMNAT A PROFESORAT (Canvia el login de alumnes al de prefesorat ocultant el d'alumnes i mostrant el de profesorat)
 function canviloginprof(){
     document.getElementById("loading").style.display = "flex";
     document.getElementById("seccio_0").style.display = "none";
@@ -105,7 +113,7 @@ function canviloginprof(){
     document.getElementById("loading").style.display = "none";
 } 
 
-//FUNCIO CANVIAR DE LOGIN DE PROFESORAT A ALUMNAT
+//FUNCIO CANVIAR DE LOGIN DE PROFESORAT A ALUMNAT (Amagar el login de profesorat i mostrar el login de alumnat)
 function canviloginalum(){
     document.getElementById("loading").style.display = "flex";
     document.getElementById("seccio_0_1").style.display = "none";
@@ -113,7 +121,7 @@ function canviloginalum(){
     document.getElementById("loading").style.display = "none";
 }
 
-//FUNCIO INICAR SESSIO
+//FUNCIO D'USUARI VERIFICAT COM A PROFESSORAT (Un cop validat canviar valor variable + amagar login i mostrar pantalla de evaluacio com a profesorat)
 function inicia_ses_professorat() {
     validat = true; 
     document.getElementById("seccio_0").style.display = "none";
@@ -126,51 +134,31 @@ function inicia_ses_professorat() {
 }
  
 
-//LOGIN CLASSE I CONTRASENYA PROFESORAT
-
-function inicia_sessio_professorat() {
-    document.getElementById("loading").style.display = "flex"; 
-    codiclasse = document.getElementById("introcodiprof").value; 
-    contrasenya = document.getElementById("introcontraprof").value;
-    for (let i = 0; i < basedades.length; i++) {
-        if (basedades[i]["codiclasse"] == codiclasse && basedades[i]["contrasenya_profes"] == contrasenya) {
-            classe = basedades[i]["classe"];
-            clase_trobada = true;
-    
-            // Cambiar el texto dentro del elemento con la clase "textclassaval"
-            const element = document.querySelector('.textclassaval');
-            if (element) {
-                element.textContent = classe; // Cambiar el texto al nombre de la clase
-            }
-        }
-    }
-    
-    if (clase_trobada) {
-        document.getElementById("loading").style.display = "none";
-        document.getElementById("login-notify-ok-profes").style.display = "flex";
-    } else {
-        document.getElementById("loading").style.display = "none";
-        document.getElementById("login-notify-error").style.display = "flex";
-        eliminarText();
-    }
-}    
-
-
-
-//FUNCIO INDICAR QUINA CLASSE ES EN TEXT 
-function classe_text_prof(){
-   
+//FUNCIO INDICAR CLASSE EN TEXT DE BENVINGUDA (Canvia el valor del text per el nomb de la classe treta del login)
+function classe_text(){
+    document.getElementById("textclasse").innerText = classe;
+    document.getElementById("textclasseprofile").innerText = classe;
 }
 
 
-//FUNCIO  BOTO NOTIFI ERROR
+
+//FUNCIO ACTUALITZAR LA PUNTUACIO (Consulta que actualitza la puntuacio de classe a la base de dades)
+//function update_puntu() {
+//    let consulta3 = scriptURL + "?query=update&where=codiclasse&is=codiclasse&values=*$$*$$"basedades[i]["puntuacio"]$$*;
+//    fetch(consulta3);
+//}      
+// ACABAR AQUESTA CONSULTA !!!!!!!!!
+ 
+
+//FUNCIO  BOTO NOTI ERROR (Amaga la notificacio de error al clicar el boto de sortir)
 function sorirbtnoti(){
     document.getElementById("login-notify-error").style.display = "none";
 }
 
+
 //FUNCIONS MENU's
 
-//FUNCIO CANVI DE PAGINES EN MENU
+//FUNCIO CANVI DE PAGINES EN MENU (Canvi de seccions amb la barra de menu + cridar la funcio de actualitzar el text de classe)
 function canvia_seccio(num_boto) {
     classe_text();
     document.getElementById("seccio_5").style.display = "none";
@@ -190,7 +178,8 @@ function canvia_seccio(num_boto) {
         }
     }
 }
-// FUNCIO PER LA UNICA SECCIO DE EVALUACIO
+
+// FUNCIO PER LA UNICA SECCIO DE EVALUACIO (mostrar la seccio de avaluacio per al professorat independent a la anterior funcio)
 function canvia_secio() {
     document.getElementById("seccio_0").style.display = "none";
     document.getElementById("seccio_1").style.display = "none";
@@ -201,15 +190,15 @@ function canvia_secio() {
 
 }
 
-//CONTADOR PUNUTACIO EVALUACIO
 
+
+//CONTADOR PUNUTACIO EVALUACIO (Augmentar o disminuir la puntuacio sobre la varaiable "cantidad" per acutalitzar la puntuacio)
 document.addEventListener('DOMContentLoaded', function() {
     const inputCantidad = document.querySelector('.input-cantidad');
     const btnDisminuir = document.querySelector('.btn-disminuir');
     const btnAumentar = document.querySelector('.btn-aumentar');
   
-    
-  
+
     function actualizarCantidad() {
       inputCantidad.value = cantidad;
       if (cantidad < 0) {
