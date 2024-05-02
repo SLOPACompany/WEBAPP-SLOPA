@@ -9,7 +9,6 @@ let clase_trobada = false;
 let cantidad = 0;
 let reg_actual;
 
-
 //FUNCIO AL CARREGAR LA PAGINA  (despareixer el loader carregar pagina i Baixar tota la database + assignacio a variable)
 window.onload=function(){
     let consulta2 = scriptURL + "?query=select";
@@ -19,6 +18,7 @@ window.onload=function(){
      })
         .then((data) => {
          basedades = data;
+         graficar()
          $('#loading').fadeOut();
         })
         
@@ -87,7 +87,7 @@ function inicia_sessio() {
     document.getElementById("login-notify-ok").style.display = "none";
     document.getElementById("seccio_0").style.display = "none"; 
     document.getElementById("menu").style.display = "flex"; 
-    canvia_seccio(1); 
+    canvia_seccio(1);
 }
 
 //FUNCIO TANCAR SESSIO USUARI (Canviar el valor de la variable i refrescar la pagina)
@@ -130,7 +130,6 @@ function inicia_ses_professorat() {
     document.getElementById("menuprof").style.display = "flex";
     document.getElementById("seccio_5").style.display = "flex";
     document.getElementById("login-notify-ok-profes").style.display = "none";
-    
 }
  
 

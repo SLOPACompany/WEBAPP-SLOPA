@@ -10,11 +10,11 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="js/charts.js"></script>
     <script src="js/scripts.js"></script>
-<!-- fonts icon -->
+<!-- ICON FONTS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/solid.min.css"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/fontawesome.min.css"> 
     <link rel="icon" type="image/png" href="resources/logoheader.png" >
-<!-- TITLE -->
+<!-- TITOL HEADER -->
     <title>SLOPA Recycling</title>
 </head> 
 <body>
@@ -117,7 +117,6 @@
 
         <div class="contenedorinteractiu">
           
-
           <div class="carta-box">
             <div class="carta">    
               <div class="cara">
@@ -140,7 +139,6 @@
             </div>
           </div>
 
-
           <div class="carta-box">
             <div class="carta">    
               <div class="cara">
@@ -152,7 +150,6 @@
             </div>
           </div>
 
-            
         </div>
       </div>
     </div>
@@ -179,35 +176,52 @@
   <div id="seccio_3" class="seccio">
           <canvas id="myChart"></canvas>
           <script>
-            var classes_grafic = ['1rA', '1rB', '1rC', '2nA', '2nB', '2nC', '3rA', '3rB', '3rC', '4rA', '4rB', '4rC'];
-            var puntuacio_grafic = [(basedades[1]["puntuacio"]),(basedades[2]["puntuacio"]),(basedades[3]["puntuacio"]),(basedades[4]["puntuacio"]), (basedades[5]["puntuacio"]),(basedades[6]["puntuacio"]),(basedades[7]["puntuacio"]),(basedades[8]["puntuacio"]),(basedades[9]["puntuacio"]), (basedades[10]["puntuacio"]),(basedades[11]["puntuacio"]),(basedades[12]["puntuacio"]),0,150];
-          //AIXO BUSCA ABANS DE TENIR LA BASE DE DADES BUG
-            var ctx = document.getElementById('myChart').getContext('2d');
-            var myChart = new Chart(ctx, {
-              type: 'horizontalBar',
-              data: {
-                labels: classes_grafic,
-                datasets: [{
-                  data: puntuacio_grafic,
-                  backgroundColor: '#72b01d',
-                  borderColor: '#72b01d',
-                  borderWidth: 5,
-                  label: "Puntuació", 
-                }]
-              },
-              options: {
-  scales: {
-    x: {
-      suggestedMin: 0,
-      suggestedMax: 100,
+            function graficar() {
+  var classes_grafic = ['1rA', '1rB', '1rC', '2nA', '2nB', '2nC', '3rA', '3rB', '3rC', '4rA', '4rB', '4rC'];
+  var puntuacio_grafic = [
+    basedades[0]["puntuacio"],
+    basedades[1]["puntuacio"],
+    basedades[2]["puntuacio"],
+    basedades[3]["puntuacio"],
+    basedades[4]["puntuacio"],
+    basedades[5]["puntuacio"],
+    basedades[6]["puntuacio"],
+    basedades[7]["puntuacio"],
+    basedades[8]["puntuacio"],
+    basedades[9]["puntuacio"],
+    basedades[10]["puntuacio"],
+    basedades[11]["puntuacio"],
+    0,
+    150
+  ];
+
+  var ctx = document.getElementById('myChart').getContext('2d');
+  var myChart = new Chart(ctx, {
+    type: 'horizontalBar',
+    data: {
+      labels: classes_grafic,
+      datasets: [{
+        data: puntuacio_grafic,
+        backgroundColor: '#72b01d',
+        borderColor: '#72b01d',
+        borderWidth: 5,
+        label: "Puntuació",
+      }]
     },
-  },
-  responsive: true,
-  aspectRatio: 1.5 
+    options: {
+      scales: {
+        x: {
+          suggestedMin: 0,
+          suggestedMax: 100,
+        },
+      },
+      responsive: true,
+      aspectRatio: 1.5
+    }
+  });
 }
 
-            });
-          </script>
+  </script>
   </div>
 
 
@@ -227,7 +241,7 @@
   
 </div>
 
-<!-- SECCIO 5 AVALUACIO -->
+<!-- SECCIO 5 (AVALUACIO) -->
 <div id="seccio_5" class="seccio">
         
 <div class="evaluacio">
@@ -252,6 +266,7 @@
   </div>
 
 <!-- PLANTILLAS ADAPTADES -->
+
 <!-- PLANTILLA LOADER -->
   <div id="loading" class="seccio">
     <div class="loadingio-spinner-pulse-t1q80hntfj"><div class="ldio-nxt5zzdxa1">
@@ -337,6 +352,6 @@
   </div>
 </div>
 </div>  
-             
+
 </body>
 </html>
