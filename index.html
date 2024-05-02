@@ -175,9 +175,23 @@
 <!-- SECCIO 3 (RANKING) -->
   <div id="seccio_3" class="seccio">
           <canvas id="myChart"></canvas>
-          <script>
-            function graficar() {
-  var classes_grafic = ['1rA', '1rB', '1rC', '2nA', '2nB', '2nC', '3rA', '3rB', '3rC', '4rA', '4rB', '4rC'];
+
+  <script>
+  function graficar() {
+  var classes_grafic = [
+    basedades[0]["classe"],
+    basedades[1]["classe"],
+    basedades[2]["classe"],
+    basedades[3]["classe"],
+    basedades[4]["classe"],
+    basedades[5]["classe"],
+    basedades[6]["classe"],
+    basedades[7]["classe"],
+    basedades[8]["classe"],
+    basedades[9]["classe"],
+    basedades[10]["classe"],
+    basedades[11]["classe"],];
+
   var puntuacio_grafic = [
     basedades[0]["puntuacio"],
     basedades[1]["puntuacio"],
@@ -194,7 +208,6 @@
     0,
     150
   ];
-
   var ctx = document.getElementById('myChart').getContext('2d');
   var myChart = new Chart(ctx, {
     type: 'horizontalBar',
@@ -219,8 +232,7 @@
       aspectRatio: 1.5
     }
   });
-}
-
+  }
   </script>
   </div>
 
