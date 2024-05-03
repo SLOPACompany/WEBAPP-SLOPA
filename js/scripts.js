@@ -142,12 +142,12 @@ function classe_text(){
 
 
 //FUNCIO ACTUALITZAR LA PUNTUACIO (Consulta que actualitza la puntuacio de classe a la base de dades)
-//function update_puntu() {
-//    let consulta3 = scriptURL + "?query=update&where=codiclasse&is=codiclasse&values=*$$*$$"basedades[i]["puntuacio"]$$*;
-//    fetch(consulta3);
-//}      
-// ACABAR AQUESTA CONSULTA !!!!!!!!!
- 
+function update_puntu() {
+    let consulta3 = scriptURL + "?query=update&where=codiclasse&is=" + basedades[reg_actual]["codiclasse"]+ "&values=*$$*$$=sum(" + basedades[reg_actual]["puntuacio"] + "," + cantidad + ")$$*";
+    fetch(consulta3);
+    location.reload(); 
+}      
+
 
 //FUNCIO  BOTO NOTI ERROR (Amaga la notificacio de error al clicar el boto de sortir)
 function sorirbtnoti(){
