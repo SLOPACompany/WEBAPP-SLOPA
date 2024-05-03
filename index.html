@@ -10,11 +10,11 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="js/charts.js"></script>
     <script src="js/scripts.js"></script>
-<!-- fonts icon -->
+<!-- ICON FONTS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/solid.min.css"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/fontawesome.min.css"> 
     <link rel="icon" type="image/png" href="resources/logoheader.png" >
-<!-- TITLE -->
+<!-- TITOL HEADER -->
     <title>SLOPA Recycling</title>
 </head> 
 <body>
@@ -117,7 +117,6 @@
 
         <div class="contenedorinteractiu">
           
-
           <div class="carta-box">
             <div class="carta">    
               <div class="cara">
@@ -140,7 +139,6 @@
             </div>
           </div>
 
-
           <div class="carta-box">
             <div class="carta">    
               <div class="cara">
@@ -152,7 +150,6 @@
             </div>
           </div>
 
-            
         </div>
       </div>
     </div>
@@ -178,85 +175,114 @@
 <!-- SECCIO 3 (RANKING) -->
   <div id="seccio_3" class="seccio">
           <canvas id="myChart"></canvas>
-          <script>
-            var classes_grafic = ['1rA', '1rB', '1rC', '2nA', '2nB', '2nC', '3rA', '3rB', '3rC', '4rA', '4rB', '4rC'];
-            var puntuacio_grafic = [(basedades3[1]["puntuacio"]),(basedades3[2]["puntuacio"]),(basedades3[3]["puntuacio"]),(basedades3[4]["puntuacio"]), (basedades3[5]["puntuacio"]),(basedades3[6]["puntuacio"]),(basedades3[7]["puntuacio"]),(basedades3[8]["puntuacio"]),(basedades3[9]["puntuacio"]), (basedades3[10]["puntuacio"]),(basedades3[11]["puntuacio"]),(basedades3[12]["puntuacio"]),0,150];
-          
-            var ctx = document.getElementById('myChart').getContext('2d');
-            var myChart = new Chart(ctx, {
-              type: 'horizontalBar',
-              data: {
-                labels: classes_grafic,
-                datasets: [{
-                  data: puntuacio_grafic,
-                  backgroundColor: '#72b01d',
-                  borderColor: '#72b01d',
-                  borderWidth: 5,
-                  label: "Puntuació", 
-                }]
-              },
-              options: {
-  scales: {
-    x: {
-      suggestedMin: 0,
-      suggestedMax: 100,
-    },
-  },
-  responsive: true,
-  aspectRatio: 1.5 
-}
 
-            });
-          </script>
+  <script>
+  function graficar() {
+      var classes_grafic = [
+      basedades[0]["classe"],
+      basedades[1]["classe"],
+      basedades[2]["classe"],
+      basedades[3]["classe"],
+      basedades[4]["classe"],
+      basedades[5]["classe"],
+      basedades[6]["classe"],
+      basedades[7]["classe"],
+      basedades[8]["classe"],
+      basedades[9]["classe"],
+      basedades[10]["classe"],
+      basedades[11]["classe"],
+      ];
+
+     var puntuacio_grafic = [
+      basedades[0]["puntuacio"],
+      basedades[1]["puntuacio"],
+      basedades[2]["puntuacio"],
+      basedades[3]["puntuacio"],
+      basedades[4]["puntuacio"],
+      basedades[5]["puntuacio"],
+      basedades[6]["puntuacio"],
+      basedades[7]["puntuacio"],
+      basedades[8]["puntuacio"],
+      basedades[9]["puntuacio"],
+      basedades[10]["puntuacio"],
+      basedades[11]["puntuacio"],
+      0,
+      150
+      ];
+
+  var ctx = document.getElementById('myChart').getContext('2d');
+    var myChart = new Chart(ctx, {
+    type: 'horizontalBar',
+    data: {
+      labels: classes_grafic,
+        datasets: [{
+        data: puntuacio_grafic,
+        backgroundColor: '#72b01d',
+        borderColor: '#72b01d',
+        borderWidth: 5,
+        label: "Puntuació",
+      }]
+    },
+    options: {
+    scales: {
+      x: {
+        suggestedMin: 0,
+        suggestedMax: 100,
+      },
+      },
+      responsive: true,
+      aspectRatio: 1.5
+    }
+  });
+  }
+  </script>
   </div>
 
 
 <!-- SECCIO 4 -->
 <div id="seccio_4" class="seccio">
-
   <div class="txtprofile-container">
     <div class="profile-container">
-      <div class="profile-text">Classe:</div>
+     <div class="profile-text">Classe:</div>
       <div id="textclasseprofile"  class="profilesecondary-text">(classe)</div>
+     </div>
+    <div class="profile-text-puntuacio-container">
+      <div class="text-punts">Puntuació:</div>
+      <div id="textpuntsprofile"  class="profilesecondary2-text">(punts)</div>
     </div>
-  <div class="profile-text-puntuacio-container">
-    <div class="text-punts">Puntuació:</div>
-    <div id="textpuntsprofile"  class="profilesecondary2-text">(punts)</div>
   </div>
-  </div>
-  
 </div>
 
-<!-- SECCIO 5 AVALUACIO -->
-<div id="seccio_5" class="seccio">
-        
-<div class="evaluacio">
-
-  <div id="title">
-    <H1>AVALUACIÓ</H1>
+<!-- SECCIO 5 (AVALUACIO) -->
+<div id="seccio_5" class="seccio">  
+  <div class="evaluacio">
+    <div id="title">
+      <H1>AVALUACIÓ</H1>
     </div>
-  <p class="infotext">*Introdueix la puntuació amb els botons </p>
-<div class="claseaval">
-  <div class="textaval">Classe:</div>
-<div class="textclassaval">classe</div>
-</div>
-<div class="cantidad-botones">
-  <button class="btn-disminuir">-</button>
-  <input type="number" class="input-cantidad" value="1">
-  <button class="btn-aumentar">+</button>
-</div>
-
-</div>
-
+    <p class="infotext">*Introdueix la puntuació amb els botons </p>
+    <div class="claseaval">
+      <div class="textaval">Classe:</div>
+      <div class="textclassaval">classe</div>
+    </div>
+    <div class="cantidad-botones">
+      <button class="btn-disminuir">-</button>
+      <input type="number" class="input-cantidad" value="1">
+      <button class="btn-aumentar">+</button>
+    </div>
+    <button class="actualitzarbtn" onclick="update_puntu()">Actualitzar</button>
   </div>
+</div>
+
+
 
 <!-- PLANTILLAS ADAPTADES -->
+
 <!-- PLANTILLA LOADER -->
   <div id="loading" class="seccio">
     <div class="loadingio-spinner-pulse-t1q80hntfj"><div class="ldio-nxt5zzdxa1">
-       <div></div><div></div><div></div>
-        </div></div>
-   </div>
+      <div></div><div></div><div></div>
+    </div></div>
+</div>
 
 <!-- PLANTILLA NOTIFICACIO INICI SESSIO CORRECTE  ALUMNAT-->
   <div id="login-notify-ok">
@@ -264,7 +290,6 @@
             <div class="success">
               <div class="flex">
                 <div class="flex-shrink-0">
-                  
                   <svg class="succes-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                     <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
                   </svg>
@@ -272,16 +297,14 @@
                 <div class="success-prompt-wrap">
                   <p class="success-prompt-heading">S'ha iniciat correctament la sessió
                   </p><div class="success-prompt-prompt">
-                    
                   </div>
                     <div class="success-button-container">
                       <button type="button" class="success-button-main" onclick="inicia_sessio(); ">Entrar</button>
-                      
                     </div>
                 </div>
-              </div>
             </div>
-          </div>
+         </div>
+      </div>
   </div>  
 
 <!-- PLANTILLA NOTIFICACIO INICI SESSIO INCORRECTE -->
@@ -290,20 +313,16 @@
       <div class="failed">
         <div class="flex">
           <div class="flex-shrink-0">
-            
             <svg class="failed-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" fill="currentColor" aria-hidden="true">
               <path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/>
             </svg>
-            
           </div>
           <div class="failed-prompt-wrap">
             <p class="failed-prompt-heading">Codi de classe no vàlid
-            </p><div class="failed-prompt-prompt">
-              
+            </p><div class="failed-prompt-prompt"> 
             </div>
               <div class="failed-button-container">
                 <button type="button" class="failed-button-main" onclick="sorirbtnoti(); ">Sortir</button>
-                
               </div>
           </div>
         </div>
@@ -317,7 +336,6 @@
   <div class="success">
     <div class="flex">
       <div class="flex-shrink-0">
-        
         <svg class="succes-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
           <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
         </svg>
@@ -325,17 +343,15 @@
       <div class="success-prompt-wrap">
         <p class="success-prompt-heading">S'ha iniciat correctament la sessió
         </p><div class="success-prompt-prompt">
-          
         </div>
           <div class="success-button-container">
             <button type="button" class="success-button-main" onclick="inicia_ses_professorat();">Entrar</button>
-            
           </div>
       </div>
     </div>
   </div>
 </div>
 </div>  
-             
+
 </body>
 </html>
