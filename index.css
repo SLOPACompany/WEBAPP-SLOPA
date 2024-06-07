@@ -249,26 +249,22 @@ font-size: 13px;
 /* ESTIL DE CADA  SECCIo*/
 
 /* SECCIO 1 (INICI)*/
-#seccio_1{
-    display: none;
+#seccio_1 {
+  display: none; 
   flex-direction: column;
-    background-image: url('resources/fondo.png');
-    background-size: cover;
-    background-position: center; 
-    background-attachment: fixed;
+  background-image: url('resources/fondo.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
 
 .welcome-container {
   position: absolute;
-  top: 10px;
-  left: 10px;
-  display: flex; 
-  align-items: center; 
-  position: absolute;
-    top: 50px; 
-    left: 40px; 
+  top: 50px;
+  left: 40px;
+  display: flex;
+  align-items: center;
 }
-
 
 .welcome-text, .secondary-text {
   color: rgb(0, 0, 0);
@@ -278,20 +274,19 @@ font-size: 13px;
 }
 
 .secondary-text {
-  color: rgb(0, 0, 0);
-    font-weight: 700;
+  font-weight: 700;
 }
-
 
 .contenedorinteractiu {
   display: flex;
- 
 }
+
 @media (max-width: 768px) {
   .contenedorinteractiu {
     margin-bottom: 100px;
   }
 }
+
 
 .carta-box {
   width: 200px;
