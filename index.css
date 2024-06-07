@@ -251,18 +251,20 @@ font-size: 13px;
 /* SECCIO 1 (INICI)*/
 #seccio_1{
     display: none;
+  flex-direction: column;
     background-image: url('resources/fondo.png');
     background-size: cover;
     background-position: center; 
+    background-attachment: fixed;
 }
 
 .welcome-container {
-  position: fixed;
+  position: absolute;
   top: 10px;
   left: 10px;
   display: flex; 
   align-items: center; 
-  position: fixed;
+  position: absolute;
     top: 50px; 
     left: 40px; 
 }
@@ -283,6 +285,12 @@ font-size: 13px;
 
 .contenedorinteractiu {
   display: flex;
+ 
+}
+@media (max-width: 480px) {
+  .contenedorinteractiu {
+    margin-bottom: 100px;
+  }
 }
 
 
